@@ -1,0 +1,69 @@
+\usepackage{times}
+\usepackage[keeplastbox]{flushend}
+
+%Redifinicion del titulo para tener negritas
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  \vskip 2em
+  \begin{center}%
+  \let \footnote \thanks
+    {\LARGE\bf \@title \par}%
+    \vskip 1.5em%
+    {\large
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    \vskip 1em%
+    {\large \@date}%
+  \end{center}%
+  \par
+  \vskip 1.5em}
+\makeatother
+
+%Dimensiones papel
+\usepackage[a4paper, includeheadfoot,
+             columnsep = 2em,
+             footskip = 10 mm, headsep = 4 mm, headheight = 4 mm,
+             inner = 2.5 cm, outer = 2.5 cm, 
+			 top = 2.3 cm, bottom = 2.1 cm]{geometry}
+
+%Listas
+\usepackage{enumitem}
+\setlist{noitemsep, topsep = 1ex}
+\renewcommand{\labelitemi}{\textbullet}
+\renewcommand{\labelitemii}{\textendash}
+\renewcommand{\labelitemiii}{\textasteriskcentered}
+\renewcommand{\labelitemiv}{\textperiodcentered}
+%Para restaurar los símbolos de las listas modificados por spanish babel
+
+%Bibliografia
+\makeatletter
+\newdimen\bibindent
+\setlength\bibindent{1.5em}
+\newdimen\bibspacing
+\setlength\bibspacing\z@
+\renewenvironment{thebibliography}[1]{%
+  \section*{\refname
+        \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep 
+            \itemsep\z@skip    % should this be commented out?
+            \parsep\z@skip     % should this be commented out?
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy\clubpenalty4000\widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
+\setlength{\bibspacing}{\baselineskip}
+
+\pagestyle{empty}
