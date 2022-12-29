@@ -1,10 +1,33 @@
-# Informática Básica Lab assignment 
+# Paper para Jenui 2023 Granada
 
-This is a repository to host the code of your lab assignments
-Create an appropriate directory structure to hold your project
-If your assignment includes different exercises, use different directories for each
 
-**Remember also** to remove all binary files and empty directories in the final version of the project
+https://jenui2023.ugr.es/
+
+Documentacion
+A continuación puede encontrar una serie de documentos que le serán de utilidad para preparar su participación en estas jornadas, así como las plantillas que deberá utilizar para la redacción de los trabajos.
+
+
+Preparación de contribuciones
+
+¿Qué se espera de un trabajo?
+¿Qué se espera de un artículo de especial relevancia?
+Plantillas
+
+Cualquier contribución debe seguir rigurosamente las especificaciones de formato indicadas en las siguientes plantillas. Las contribuciones que no cumplan dichas especificaciones no serán aceptadas.
+
+Ponencias y pósteres
+
+Plantilla e instrucciones para LaTeX
+Plantilla e instrucciones para LibreOffice Write
+Plantilla e instrucciones para Microsoft Office Word
+Artículos de especial relevancia
+
+Plantilla e instrucciones para LaTeX
+Plantilla e instrucciones para Microsoft Office Word
+Indicaciones para revisores y revisoras
+
+Guía para el proceso de revisión.
+
 
 This text is Markdown text. To learn about Markdown, Study these references:
 * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
