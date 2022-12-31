@@ -38,7 +38,7 @@ bib: $(SRC) $(BIB)
 	$(BIBTEX) $(SRCSIN)
 
 clean:
-	$(RM) *.dvi *.bbl *.aux *.toc *.lof *.lot *.log *.blg *.out *~ basura* HTML/*
+	$(RM) *~ *.dvi *.bbl *.aux *.toc *.lof *.lot *.log *.blg *.out *~ basura* HTML/*
 
 delete:
 	$(MAKE) clean; $(RM) *~ $(SRCSIN).pdf $(SRCSIN).ps
