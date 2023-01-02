@@ -40,6 +40,9 @@ bib: $(SRC) $(BIB)
 clean:
 	$(RM) *~ *.dvi *.bbl *.aux *.toc *.lof *.lot *.log *.blg *.out *~ basura* HTML/*
 
+push:
+	git pull; git add . ; git commit -m "Text improvement"; git push
+
 delete:
 	$(MAKE) clean; $(RM) *~ $(SRCSIN).pdf $(SRCSIN).ps
 
