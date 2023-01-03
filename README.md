@@ -17,7 +17,8 @@ Cualquier contribución debe seguir rigurosamente las especificaciones de format
 
 Ponencias y pósteres
 
-Plantilla e instrucciones para LaTeX
+[Plantilla e instrucciones para
+LaTeX](https://aenui.org/wp-content/uploads/2021/11/Instrucciones_autores_JENUI_LaTeX.zip)
 Plantilla e instrucciones para LibreOffice Write
 Plantilla e instrucciones para Microsoft Office Word
 Artículos de especial relevancia
