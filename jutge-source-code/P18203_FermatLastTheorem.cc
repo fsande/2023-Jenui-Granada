@@ -41,10 +41,54 @@ Do not include unnecessary comments in the code.
  *        User: Please use descriptive names for all identifiers. Avoid single character identifiers (like "a") except in for-loops variables
  *        ChatGPT: 
  *
- *          Jutge.org Veredict: Accepted
+ *          Jutge.org Veredict: Execution Error (time limit exceeded)
  *
  * @see https://jutge.org/problems/P18203_en
  *      https://chat.openai.com/chat
  */
 
+#include <iostream>
+#include <cmath>
 
+/**
+ * @brief Finds the first natural solution to the equation x^3 + y^3 = z^3 that fulfills
+ * the restrictions of a line: lower_bound_x <= x <= upper_bound_x and lower_bound_y <= y <= upper_bound_y.
+ * @param lower_bound_x The lower bound for x.
+ * @param upper_bound_x The upper bound for x.
+ * @param lower_bound_y The lower bound for y.
+ * @param upper_bound_y The upper bound for y.
+ * @param x The first natural solution for x.
+ * @param y The first natural solution for y.
+ * @param z The first natural solution for z.
+ * @return true if a solution is found, false otherwise.
+ */
+bool FindSolution(int lower_bound_x, int upper_bound_x, int lower_bound_y, int upper_bound_y,
+                  int& x, int& y, int& z) {
+  for (int i = lower_bound_x; i <= upper_bound_x; ++i) {
+    for (int j = lower_bound_y; j <= upper_bound_y; ++j) {
+      int sum = i * i * i + j * j * j;
+      int candidate = std::cbrt(sum);
+      if (candidate * candidate * candidate == sum) {
+        x = i;
+        y = j;
+        z = candidate;
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+int main() {
+  int a, b, c, d;
+
+  // Read lines from standard input
+  while (std::cin >> a >> b >> c >> d) {
+    int x, y, z;
+    if (FindSolution(a, b, c, d, x, y, z)) {
+      std::cout << x << "^3 + " << y << "^3 = " << z << "^3" << std::endl;
+    } else {
+      std::cout << "No solution!" << std::endl;
+    }
+  }
+}
