@@ -75,8 +75,7 @@ int main() {
   // Read numbers from standard input
   while (std::cin >> number) {
     // Print the number of steps it takes to reach 1 for the number
-    std::cout << "It takes " << StepsToReachOne(number) << " steps to reach 1 for "
-              << number << "." << std::endl;
+    std::cout << StepsToReachOne(number) << std::endl;
   }
 
   return 0;
