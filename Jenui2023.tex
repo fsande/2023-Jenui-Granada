@@ -5,10 +5,102 @@
 \usepackage{balance}
 \usepackage{jenuia4}
 \usepackage{url}
-\usepackage{graphicx}
+%\usepackage{graphicx}
 
+% Mis paquetes. No incluídos en la plantilla de Jenui
 \usepackage{hyperref}
 
+\usepackage[pdftex]{color}
+\usepackage[pdftex]{graphicx}
+%\graphicspath{{FIGURES/png/}} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{marron}       {rgb}{0.496, 0.203, 0.152}
+\definecolor{verde-claro}  {rgb}{0.625, 0.734, 0.199}
+\definecolor{oscuro}       {rgb}{0.187, 0.141, 0.285}
+\definecolor{gris}     	   {rgb}{0.500, 0.500, 0.500}
+\definecolor{bgd-listings} {rgb}{0.999, 0.999, 0.900}
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Para listados de código
+\usepackage{listings} 
+\lstloadlanguages{C++}
+\lstset{
+  language=C++,                        % C
+  %basicstyle=\small,                  % Listados en small
+  keywordstyle=\color{red},            % Palabras clave en rojo
+  %identifierstyle=\ttfamily,
+  %commentstyle=\color{blue},           % comentarios en azul
+  commentstyle=\color{gray45},
+  stringstyle=\color{green},           % cadenas en verde
+	%showstringspaces=false
+  language=C,                          	% C
+  %backgroundcolor=\color{bgd-listings},
+	%backgroundcolor=\color{yellow},     	% Códigos sobre fondo amarillo
+	%frame=lines,                        	% Línea arriba y abajo de cada listado de código
+  %framerule=0pt,
+  %basicstyle=\small\ttfamily,
+	basicstyle=\scriptsize,                   	% Listados en tiny
+	captionpos=b,													% Posición de los títulos abajo (bottom)
+  keywordstyle=\bfseries,
+	%keywordstyle=\color{black}\textbf,   	% BGD: Palabras clave en negro y negrita
+	identifierstyle=\color{black}\ttfamily, % BGD: Identificadores en negro	
+	commentstyle=\color{blue}\textit,  	 	% BGD: Comentarios en azul cursiva
+  stringstyle=\ttfamily,
+	%stringstyle=\color{red}\texttt,       % BGD: Cadenas en rojo
+	directivestyle=\color{oscuro}\texttt,	
+  emph={pragma,llc,omp},								% BGD: Resaltar las palabras pragma, llc y omp
+	emphstyle=\textbf,
+	showstringspaces=false,								% BGD: No mostar espacios
+	columns=fixed,
+	basewidth={0.6em, 0.45em},
+	xleftmargin=5mm,
+	keepspaces=true,											% BGD: Mantener espacios
+	framexleftmargin=5mm,									% BGD: Margen izquierdo de los marcos (para que quepan num. de línea) 
+	frame=trbl,														% BGD: Cuadro  (t/T: top, r/R: right, b/B: bottom, l/L: left): x->thin, X->thick
+	%frame=trBL,												  % BGD: Cuadro  (t/T: top, r/R: right, b/B: bottom, l/L: left): x->thin, X->thick
+	framesep=4pt,
+	%frameround=fttt,											% BGD: Cuadro con esquina curvadas
+  %framextopmargin=3pt,
+  %framexbottommargin=3pt,
+  %framexleftmargin=0.4cm,
+  %framesep=0pt,
+	rulesepcolor=\color{black},						% BGD: Color de los cuadros azul
+	numbers=left,													% BGD: Números de línea a la izquierda
+	firstnumber=1,												% BGD: Número línea empieza en 0 (línea vacía, no se muestra)
+	stepnumber=1,													% BGD: Números línea a línea
+	numberstyle=\scriptsize,										% BGD: Números de línea pequeños
+	numbersep=8pt,												% BGD: Números de línea separados 8 pts a la izquierda
+	numberblanklines=false,								% BGD: No pone números de línea en líneas vacías
+	extendedchars=true,									  % BGD: Utiliza caracteres extendidos (tildes, etc.)
+	inputencoding=latin1,									
+  %inputencoding=utf8x,									
+	tabsize=2,														% BGD: Tamaño de tabulador para indentaciones = 2
+	breaklines=true,											% BGD: Cortar líneas si son muy grandes
+	breakautoindent=true,									% BGD: Autoindentar líneas cortadas
+	postbreak=\space											% BGD: Cortar líneas por espacios
+}
+%% minimizar fragmentado de listados
+%\lstnewenvironment{listing}[1][]
+%   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+%\lstdefinestyle{consola}
+%   {basicstyle=\scriptsize\bf\ttfamily,
+%    backgroundcolor=\color{gray75},
+%   }
+%\lstdefinestyle{C}
+%   {language=C,
+%   }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginDocument{
+  %\renewcommand\thelstlisting{\arabic{chapter}.\arabic{section}}
+  \renewcommand{\thelstlisting}{\arabic{lstlisting}}
+}
+\renewcommand{\lstlistingname}{Listado} % Los títulos de los códigos insertados se denotan con "Listado"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\jutge}{\textit{Jutge.org}{}}           % BGD: Nuevos comandos para imprimir con estilo
+\newcommand{\ChatGPT}{\textit{ChatGPT}{}}           % BGD: Nuevos comandos para imprimir con estilo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{El impacto de los asistentes basados en IA en la enseñanza-aprendizaje de la programación}
 
 %\author{\normalsize 
@@ -148,7 +240,7 @@ plantear son comunes a muchas asignaturas e incluso a otras titulaciones.
 % 
 % Esta dificultad es polifacética y no se puede analizar desde un único punto de vista.
 
-Desde hace ya varios cursos en IB se viene usando la plataforma \textit{Jutge.org} (juez) 
+Desde hace ya varios cursos en IB se viene usando la plataforma \jutge{} (juez) 
 \cite{URL::Jutge, Petit:Jutge:2018} para la evaluación de las prácticas de IB.
 Se trata de una plataforma que ha sido desarrollada en la Universidad Politécnica de Catalunya y que ha sido
 diseñada tanto para profesorado como para alumnado.
@@ -156,7 +248,7 @@ La plataforma aloja una gran cantidad de problemas (aproximadamente unos 2100) q
 tópicos incluyendo entre ellos los fundamentos de la programación.
 Los problemas están perfectamente descritos y contienen un conjunto de tests que el código de usuario ha de
 superar para que la plataforma otorgue al envío de un estudiante un veredicto AC (\textit{Aceptado}).
-Como una de sus características, \textit{Jutge.org} hace hincapié en el trabajo del alumno, por lo que 
+Como una de sus características, \jutge{} hace hincapié en el trabajo del alumno, por lo que 
 resulta especialmente útil para reforzar el enfoque de aprender haciendo, en nuestro caso, programando.
 
 Jutge evalúa por sí solo.
@@ -194,16 +286,16 @@ Problema del plagio, ...
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Experiencias con \textit{Jutge.org} y ChatGPT}
-Todos los enunciados de problemas de \textit{Jutge.org} están públicamente disponibles en la
+Todos los enunciados de problemas de \jutge{} están públicamente disponibles en la
 plataforma \cite{URL::prob}, en la que cada uno de ellos cuenta con una descripción clara y precisa así como un
 conjunto de tests públicos.
 
 Consideremos a modo de ejemplo el problema \textit{Primality} (P48713).
 Se trata de determinar si cada uno de los números naturales de una secuencia es o no primo.
-Si el enunciado del problema, junto con los tests se le pasan a ChatGPT la solución que obtiene es la más
+Si el enunciado del problema, junto con los tests se le pasan a \ChatGPT{} la solución que obtiene es la más
 habitual para un programador inexperto, la de fuerza bruta consistente en probar todos los divisores en el
 rango $[2, N-1]$.
-Esta solución no recibe el veredicto \texttit{Accepted} en \textit{Jutge.org} sino que la plataforme indica
+Esta solución no recibe el veredicto \textit{Accepted} en \jutge{} sino que la plataforme indica
 como veredicto \textit{Execution Error (time limit exceeded)}.
 Ello se debe a que espera un algoritmo más eficiente para este cómputo.
 
@@ -216,25 +308,19 @@ frecuente una respuesta del tipo "\textit{lo he probado y he observado que funci
 considera adecuada para la evaluación de un ejercicio práctico.
 
 En el propio enunciado del problema se indica una pista para un algoritmo de menor complejidad.
-Si a ChatGPT (en este caso en inglés) se le indica
-\textit{Could you optimize the is_prime() function for a better performance?}
+Si a \ChatGPT{} (en este caso en inglés) se le indica
+\textit{Could you optimize the is\_prime() function for a better performance?}
 el bot modifica la función, entregando en este caso una versión que sí es aceptada en \textit{Jutge.org}.
 A pesar de haberlo indicado en el enunciado del problema, la función entregada no cumple con el convenio que
 establece la Guía de Estilo de Google, pero si se le indica esa circunstancia, el bot corrige el identificador
 de la función. 
 El código completo de la función es el que se muestra en el Listado
 
-En el caso de este problema, en una sesión diferente con ChatGPT se le ha entregado el enunciado en español y
+En el caso de \textit{Primality}, en una sesión diferente con \ChatGPT{} se le ha entregado el enunciado en español y
 en ese caso, el bot entrega directamente la solución con la optimización del código, pero el código no cumple
 con el estándar de Estilo en cuanto a la colocación de las llaves de apertura y cierre de bloques en C++.
 
 
-
-
-
-Tomemos como ejemplo el problema 
-
-El título de la obra debe estar a 18~puntos, en negrita y centrado.
 
 \section{Extensión}
 
