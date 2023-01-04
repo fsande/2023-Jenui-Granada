@@ -23,6 +23,13 @@
               Base your solution on a function that, given a number as parameter, returns as result the sum of its digits.
               Make the program include Doxygen format header comments and also make sure that the code complies with the requirements of the Google C++ Style Guide.
               Make sure you use significative names for all variables in your code and avoid single character identifiers.
+ *        * Explicación generada por ChatGPT:
+ *          This program reads integers from the standard input and prints the sum of the digits of each number until the end of input is reached. 
+ *          The sum of the digits is calculated by the SumOfDigits function, which takes an integer as input and returns the sum of its digits. 
+ *          The function iteratively sums the last digit of the number and removes it until the number becomes zero.
+ *          To comply with the Google C++ Style Guide, the program follows the guidelines for naming conventions, indentation, and line length. 
+ *          The function and variable names are written in lower camel case and use descriptive names. 
+ *          The code uses four spaces for indentation and has a maximum line length of 80 characters.
  *
  *          Jutge.org Veredict: Accepted
  *
