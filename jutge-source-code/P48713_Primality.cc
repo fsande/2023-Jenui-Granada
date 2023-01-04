@@ -5,90 +5,110 @@
  *
  * @author F.de Sande
  * @date Jan 4, 2023
- * @brief ChatGPT solution to P18203 Jutge.org problem
+ * @brief ChatGPT solution to P48713 Jutge.org problem
  *        * Problem description provided to ChatGPG:
  *
-Write a C++ program (-std=c17) 
-with a<=b and c<=d, prints the first natural solution to the equation
-x^3 + y^3 = z^3
-that fulfills the restrictions of a line: a<=x<=b and c<=y<=d.
-The program input has several lines, each one with four natural numbers a,b,c,d such that a<=b and c<=d.
-The program should print a line with a natural solution to the equation
-x^3 + y^3 = z^3
-that fulfills the restrictions of a line. 
-If there are two or more lines with solution, print the first found. 
-If there are several solutions for the same line, print the one with the smallest x. 
-If there is a tie in x, print the solution with the smallest y. 
-If there are no lines with solution, print "No solution!".
-For example, if the input is:
-2 5 4 13
-The output should be:
-No solution!
-If the input is:
-1 1 1 1
-0 1 0 1
-1 100 1 100
-The output should be:
-0^3 + 0^3 = 0^3
-Base your solution on a function that will be called from main().
-Make the program include Doxygen format header comments.
-Make that the code complies with the requirements of the Google C++ Style Guide.
-Make sure the code uses only significative names for all variables and avoid single character identifiers.
-Do not include unnecessary comments in the code.
+            Escriba un programa C++ (-std=c17) que lea una secuencia de números naturales y, para cada uno de ellos, diga si es un número primo o no. 
+            Recuerde que un número natural es primo si y sólo si es mayor que 1 y no tiene ningún divisor positivo distinto de 1 y él mismo.
+            La entrada del programa consistirá en un número n, seguido de n números naturales.
+            Para cada número natural dado, el programa indicará en una línea si es primo o no.
+            Si la entrada al programa fuera:
+            4
+            7 10 101 161
+            La salida debiera ser:
+            7 is prime
+            10 is not prime
+            101 is prime
+            161 is not prime
+            Base su solución en una función que será invocada desde main().
+            El programa debe incluir comentarios de cabecera en formato Doxygen.
+            Haga que el código cumpla con los requisitos de la Guía de Estilo de Google para C++.
+            Haga que el programa utilice identificadores significativos para todas las variables.
+            No utilice identificadores de un único carácter en el programa.
+            No incluya en el programa comentarios innecesarios.
  *
  *        * Diálogo entablado con ChatGPT:
  *
- *        User: Please use descriptive names for all identifiers. Avoid single character identifiers (like "a") except in for-loops variables
- *        ChatGPT: 
+ *        User: A continuación, se muestra la misma solución anterior pero con las llaves colocadas de acuerdo con la guía de estilo de Google para C++:
+ *        ChatGPT: A continuación, se muestra la misma solución anterior pero con las llaves colocadas de acuerdo con la guía de estilo de Google para C++:
+ *        Pero no es cierto que corrija ese error.
  *
- *          Jutge.org Veredict: Execution Error (time limit exceeded)
+ *        User: Utilice en el código una función inline para determinar si un número es divisible por otro
  *
- * @see https://jutge.org/problems/P18203_en
+ *          Jutge.org Veredict: Accepted
+ *
+ * @see https://jutge.org/problems/P48713_en
  *      https://chat.openai.com/chat
+ */
+
+/**
+ * @file       main.cpp
+ * @brief      Programa que lee una secuencia de números naturales y, para cada uno de ellos,
+ *             indica si es un número primo o no.
+ * @author     Your Name
+ * @date       01-01-1970
  */
 
 #include <iostream>
 #include <cmath>
 
 /**
- * @brief Finds the first natural solution to the equation x^3 + y^3 = z^3 that fulfills
- * the restrictions of a line: lower_bound_x <= x <= upper_bound_x and lower_bound_y <= y <= upper_bound_y.
- * @param lower_bound_x The lower bound for x.
- * @param upper_bound_x The upper bound for x.
- * @param lower_bound_y The lower bound for y.
- * @param upper_bound_y The upper bound for y.
- * @param x The first natural solution for x.
- * @param y The first natural solution for y.
- * @param z The first natural solution for z.
- * @return true if a solution is found, false otherwise.
+ * @brief      Determina si un número natural es divisible por otro.
+ *
+ * @param[in]  a     Número natural a evaluar.
+ * @param[in]  b     Número natural por el que evaluar.
+ *
+ * @return     Devuelve true si a es divisible por b, false en caso contrario.
  */
-bool FindSolution(int lower_bound_x, int upper_bound_x, int lower_bound_y, int upper_bound_y,
-                  int& x, int& y, int& z) {
-  for (int i = lower_bound_x; i <= upper_bound_x; ++i) {
-    for (int j = lower_bound_y; j <= upper_bound_y; ++j) {
-      int sum = i * i * i + j * j * j;
-      int candidate = std::cbrt(sum);
-      if (candidate * candidate * candidate == sum) {
-        x = i;
-        y = j;
-        z = candidate;
-        return true;
-      }
-    }
-  }
-  return false;
+inline bool es_divisible(unsigned int a, unsigned int b)
+{
+    return a % b == 0;
 }
 
-int main() {
-  int a, b, c, d;
-
-  // Read lines from standard input
-  while (std::cin >> a >> b >> c >> d) {
-    int x, y, z;
-    if (FindSolution(a, b, c, d, x, y, z)) {
-      std::cout << x << "^3 + " << y << "^3 = " << z << "^3" << std::endl;
-    } else {
-      std::cout << "No solution!" << std::endl;
+/**
+ * @brief      Determina si un número natural es primo o no.
+ *
+ * @param[in]  n     Número natural a evaluar.
+ *
+ * @return     Devuelve true si n es un número primo, false en caso contrario.
+ */
+bool es_primo(unsigned int n)
+{
+    // Un número primo es mayor que 1 y no tiene ningún divisor positivo distinto de 1 y él mismo.
+    if (n <= 1)
+    {
+        return false;
     }
-  }
+
+    for (unsigned int i = 2; i <= std::sqrt(n); i++)
+    {
+        if (es_divisible(n, i))
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+/**
+ * @brief      Programa principal.
+ *
+ * @return     Devuelve 0 al finalizar.
+ */
+int main()
+{
+    // Número de números naturales a evaluar.
+    unsigned int num_numeros;
+    std::cin >> num_numeros;
+
+    // Evaluación de cada número natural.
+    for (unsigned int i = 0; i < num_numeros; i++)
+    {
+        unsigned int num;
+        std::cin >> num;
+        std::cout << num << " is " << (es_primo(num) ? "prime" : "not prime") << std::endl;
+    }
+
+    return 0;
 }

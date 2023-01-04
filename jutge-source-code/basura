@@ -1,0 +1,5 @@
+            Base your solution on a function that will be called from main().
+            Make the program include Doxygen format header comments.
+            Make that the code complies with the requirements of the Google C++ Style Guide.
+            Make sure the code uses only significative names for all variables and avoid single character identifiers.
+            Do not include unnecessary comments in the code.
