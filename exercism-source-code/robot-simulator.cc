@@ -24,14 +24,6 @@
             Turn left yet again
             Say a robot starts at {7, 3} facing north. Then running this stream of instructions should leave it at {9, 4} facing west.
  *
- *        * Diálogo entablado con ChatGPT:
- *          Could you optimize 
- *
- *        User: 
- *        User: 
- *
- *          Jutge.org Veredict: Accepted
- *
  * @see https://jutge.org/problems/P48713_en
  *      https://chat.openai.com/chat
  */
