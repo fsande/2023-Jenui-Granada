@@ -194,6 +194,42 @@ Problema del plagio, ...
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Experiencias con \textit{Jutge.org} y ChatGPT}
+Todos los enunciados de problemas de \textit{Jutge.org} están públicamente disponibles en la
+plataforma \cite{URL::prob}, en la que cada uno de ellos cuenta con una descripción clara y precisa así como un
+conjunto de tests públicos.
+
+Consideremos a modo de ejemplo el problema \textit{Primality} (P48713).
+Se trata de determinar si cada uno de los números naturales de una secuencia es o no primo.
+Si el enunciado del problema, junto con los tests se le pasan a ChatGPT la solución que obtiene es la más
+habitual para un programador inexperto, la de fuerza bruta consistente en probar todos los divisores en el
+rango $[2, N-1]$.
+Esta solución no recibe el veredicto \texttit{Accepted} en \textit{Jutge.org} sino que la plataforme indica
+como veredicto \textit{Execution Error (time limit exceeded)}.
+Ello se debe a que espera un algoritmo más eficiente para este cómputo.
+
+Esta solución es la que cabría esperar de un estudiante de primer curso de informática.
+Con frecuencia observamos estudiantes que ofrecen un algoritmo óptimo y ello es una pista para detectar que,
+posiblemente han hallado la solución en algún foro. 
+Al preguntar al estudiante la razón por la que no recorre todo el rango de búsqueda cabría esperar una
+respuesta en la que el estudiante indique que ha investigado el problema y aprendido sobre el mismo, pero es
+frecuente una respuesta del tipo "\textit{lo he probado y he observado que funcionaba}", que obviamente no se
+considera adecuada para la evaluación de un ejercicio práctico.
+
+En el propio enunciado del problema se indica una pista para un algoritmo de menor complejidad.
+Si a ChatGPT (en este caso en inglés) se le indica
+\textit{Could you optimize the is_prime() function for a better performance?}
+el bot modifica la función, entregando en este caso una versión que sí es aceptada en \textit{Jutge.org}.
+A pesar de haberlo indicado en el enunciado del problema, la función entregada no cumple con el convenio que
+establece la Guía de Estilo de Google, pero si se le indica esa circunstancia, el bot corrige el identificador
+de la función. 
+El código completo de la función es el que se muestra en el Listado
+
+
+
+
+
+
+Tomemos como ejemplo el problema 
 
 El título de la obra debe estar a 18~puntos, en negrita y centrado.
 
