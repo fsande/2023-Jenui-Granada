@@ -289,7 +289,10 @@ sino de la calidad del código desarrollado.
 enfatizan otros aspectos del código que nos parecen tanto o más relevantes que el propio funcionamiento del
 mismo, que obviamente es un requisito ineludible.
 Muchos de los requisitos que se exigen a los programas de prácticas de IB se definen en la Guía de estilo de 
-referencia que se sigue en la asignatura \cite{Google::GSG}.
+referencia que se sigue en la asignatura 
+%\cite{Google::GSG}
+\footnote{Google C++ Style Guide\\ \href{https://google.github.io/styleguide/cppguide.html}{\scriptsize{\texttt{https://google.github.io/styleguide/cppguide.html}}}}.
+
 Relacionamos a continuación algunos de los requisitos exigidos, que obviamente se introducen al alumnado de
 forma progresiva:
 \begin{itemize}
@@ -308,49 +311,29 @@ forma progresiva:
 \item Que los métodos definidos en las clases de los programas sean \textit{const friendly}.
 \end{itemize}
 
+Un problema recurrente en todas las asignaturas que requieren la evaluación de prácticas de programación es la
+infracción por parte de algunos estudiantes de las reglas de código de conducta que establecen que los
+trabajos presentados a evaluación han de ser programas originales realizados por sus autores.
+Ante la dificultad de acreditar fehacientemente esta restricción en una sesión de evaluación con un elevado
+número de estudiantes en el aula de prácticas y con un tiempo tan limitado se ha optado por valorar
+casi exclusivamente el trabajo que el estudiante realiza \textit{in situ} en la sesión de evaluación, y no los
+ejercicios que durante la semana ha realizado en calidad de preparación para esa evaluación.
 
 
-Problema del plagio, ...
 
 
-
-%%%%%%%%%%%%%%%%%%%% Table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{table*}
-%	\begin{center}
-%	\begin{tabular}{p{5.2cm}p{4.5cm}cc}
-%		\textbf{Título} & \textbf{Autores} & \textbf{Edición} & 
-%		\textbf{Citas (Heterocitas)}\\\hline
-%		Niveles de Competencia de los Objetivos Formativos en las 
-%		Ingenierías & Miguel Valero-Garcia y Juan José Navarro & 2001 
-%		& 21 (18) \\\hline
-%		Formulación de los Objetivos de una Asignatura en Tres Niveles
-%		Jerárquicos & Juan José Navarro, Miguel Valero-Garcia, Fermín
-%		Sánchez Carracedo y Jordi Tubella & 2000 & 18 (8) \\\hline
-%		¿Cómo serán las asignaturas del EEES? & Fermín Sánchez
-%		Carracedo & 2005 & 10 (6) \\\hline
-%		Evaluación continuada a un coste razonable & Miguel
-%		Valero-Garcia, Luís M. Díaz de Cerio & 2002 & 9 (9) \\\hline
-%		Hacia la Evaluación Continua Automática de Prácticas de
-%		Programación & Juan Carlos Rodríguez del Pino, Margarita Díaz
-%		Roca, Zenón J. Hernández Figueroa y José Daniel González
-%		Domínguez & 2007 & 8 (7) 
-%	\end{tabular}
-%	\end{center}
-%	\caption{\label{tab:mascit}Artículos más citados en las Jenui.}
-%\end{table*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Experiencias con \textit{Jutge.org} y ChatGPT}
 Todos los enunciados de problemas de \jutge{} están públicamente disponibles en la
-plataforma \cite{URL::prob}, en la que cada uno de ellos cuenta con una descripción clara y precisa así como un
+plataforma \cite{URL::prob} y cada uno de ellos cuenta con una descripción clara y precisa así como un
 conjunto de tests públicos.
 
 Consideremos a modo de ejemplo el problema \textit{Primality} (P48713).
 Se trata de determinar si cada uno de los números naturales de una secuencia es o no primo.
-Si el enunciado del problema, junto con los tests se le pasan a \ChatGPT{} la solución que obtiene es la más
-habitual para un programador inexperto, la de fuerza bruta consistente en probar todos los divisores en el
-rango $[2, N-1]$.
-Esta solución no recibe el veredicto \textit{Accepted} en \jutge{} sino que la plataforme indica
+Si el enunciado del problema, junto con los tests se le pasan a \ChatGPT{} en inglés, tal como figuran en
+\jutge{}, la solución que obtiene es la más habitual para un programador inexperto, la de fuerza bruta 
+consistente en probar todos los divisores en el rango $[2, N-1]$.
+Esta solución no recibe el veredicto ``\textit{Accepted}'' en \jutge{} sino que la plataforme indica
 como veredicto \textit{Execution Error (time limit exceeded)}.
 Ello se debe a que espera un algoritmo más eficiente para este cómputo.
 
@@ -359,7 +342,7 @@ Con frecuencia observamos estudiantes que ofrecen un algoritmo óptimo y ello es
 posiblemente han hallado la solución en algún foro. 
 Al preguntar al estudiante la razón por la que no recorre todo el rango de búsqueda cabría esperar una
 respuesta en la que el estudiante indique que ha investigado el problema y aprendido sobre el mismo, pero es
-frecuente una respuesta del tipo "\textit{lo he probado y he observado que funcionaba}", que obviamente no se
+frecuente una respuesta del tipo ``\textit{lo he probado y he observado que funcionaba}'', que obviamente no se
 considera adecuada para la evaluación de un ejercicio práctico.
 
 En el propio enunciado del problema se indica una pista para un algoritmo de menor complejidad.
@@ -369,7 +352,7 @@ el bot modifica la función, entregando en este caso una versión que sí es ace
 A pesar de haberlo indicado en el enunciado del problema, la función entregada no cumple con el convenio que
 establece la Guía de Estilo de Google, pero si se le indica esa circunstancia, el bot corrige el identificador
 de la función. 
-El código completo de la función es el que se muestra en el Listado
+El código completo de la función es el que se muestra en el Listado \ref{code:prime}.
 %%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[t]
 %\begin{lstlisting}[firstnumber=1,caption={Test de primalidad suministrado por \ChatGPT{}},label=code:mandel_seq,float=[htb]]
@@ -398,24 +381,6 @@ En el caso de \textit{Primality}, en una sesión diferente con \ChatGPT{} se le 
 en ese caso, el bot entrega directamente la solución con la optimización del código, pero el código no cumple
 con el estándar de Estilo en cuanto a la colocación de las llaves de apertura y cierre de bloques en C++.
 
-
-%%%%%%%%%%%%%%%%%%%% Fig. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}[htbp]
-%\centerline{\includegraphics[width=\linewidth]{mediaref}}
-%\caption{\label{fig:medias} Número medio de referencias por artículo en las 15 ediciones de las Jenui} 
-%\label{fig:} 
-%\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%% Fig. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure*}
-%	\begin{center}
-%	\includegraphics[width = 0.8\linewidth]{diagrLargo.jpg}
-%	\end{center}
-%	\caption{Diagrama en ancho de dos columnas.}
-%\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Bibliografía}
 En el texto se utiliza el número de la referencia, también entre 
 corchetes. Hay tres cuestiones a tener en cuenta: (a) El número de 
@@ -436,13 +401,6 @@ recomendamos que se mire este artículo o un libro adecuado como
 referencia y que se sigan las siguientes normas:
 %
 \begin{itemize}
-	\item Se debe ser consistente.  Por ejemplo si en una entrada se
-	pone ``Actas de las XVII Jornadas de Enseñanza Universitaria de la
-	Informática'' en otra no puede ponerse ``Jenui 2012'' y en otra
-	``Actas del Jenui'98''.  Si en una entrada el título de un libro
-	va en cursiva, en otra entrada no puede ir en letra normal.  No
-	importa tanto cómo se escriba sino que siempre se escriba igual.
-	
 	\item Todo debe ir en español.  Si se importa la bibliografía de
 	otra fuente (o se usa BibTeX) es posible que se importen palabras
 	en inglés (``J. García \emph{and} P. Quintero, \emph{editors}'').
@@ -473,11 +431,6 @@ referencia y que se sigan las siguientes normas:
 	larga para que quepa cómodamente en una columna, entonces mejor 
 	ponerlo como pie de página. 
 	
-	\item Otro tipo de documento que es mejor no poner como referencia 
-	bibliográfica son las leyes. Basta con escribir ``Según la Ley de 
-	Reformas Sugestionadas (Ley 7/2012 de 29 de octubre)'': esta 
-	información es todo lo que se necesita para encontrarla con 
-	facilidad en el BOE.
 \end{itemize}
 
 La lista de referencias usa todo el ancho de la columna.  El número 
@@ -503,5 +456,49 @@ siguientes:
 \bibliographystyle{jenui}
 %\nocite{*}
 \bibliography{Jenui2023}
+
+
+%%%%%%%%%%%%%%%%%%%% Table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{table*}
+%	\begin{center}
+%	\begin{tabular}{p{5.2cm}p{4.5cm}cc}
+%		\textbf{Título} & \textbf{Autores} & \textbf{Edición} & 
+%		\textbf{Citas (Heterocitas)}\\\hline
+%		Niveles de Competencia de los Objetivos Formativos en las 
+%		Ingenierías & Miguel Valero-Garcia y Juan José Navarro & 2001 
+%		& 21 (18) \\\hline
+%		Formulación de los Objetivos de una Asignatura en Tres Niveles
+%		Jerárquicos & Juan José Navarro, Miguel Valero-Garcia, Fermín
+%		Sánchez Carracedo y Jordi Tubella & 2000 & 18 (8) \\\hline
+%		¿Cómo serán las asignaturas del EEES? & Fermín Sánchez
+%		Carracedo & 2005 & 10 (6) \\\hline
+%		Evaluación continuada a un coste razonable & Miguel
+%		Valero-Garcia, Luís M. Díaz de Cerio & 2002 & 9 (9) \\\hline
+%		Hacia la Evaluación Continua Automática de Prácticas de
+%		Programación & Juan Carlos Rodríguez del Pino, Margarita Díaz
+%		Roca, Zenón J. Hernández Figueroa y José Daniel González
+%		Domínguez & 2007 & 8 (7) 
+%	\end{tabular}
+%	\end{center}
+%	\caption{\label{tab:mascit}Artículos más citados en las Jenui.}
+%\end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% Fig. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[htbp]
+%\centerline{\includegraphics[width=\linewidth]{mediaref}}
+%\caption{\label{fig:medias} Número medio de referencias por artículo en las 15 ediciones de las Jenui} 
+%\label{fig:} 
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% Fig. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure*}
+%	\begin{center}
+%	\includegraphics[width = 0.8\linewidth]{diagrLargo.jpg}
+%	\end{center}
+%	\caption{Diagrama en ancho de dos columnas.}
+%\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
