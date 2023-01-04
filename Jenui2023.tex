@@ -9,7 +9,7 @@
 
 % Mis paquetes. No incluídos en la plantilla de Jenui
 \usepackage{hyperref}
-
+\usepackage{float} % For float Listings
 \usepackage[pdftex]{color}
 \usepackage[pdftex]{graphicx}
 %\graphicspath{{FIGURES/png/}} 
@@ -25,62 +25,71 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Para listados de código
 \usepackage{listings} 
-\lstloadlanguages{C++}
-\lstset{
-  language=C++,                        % C
-  %basicstyle=\small,                  % Listados en small
-  keywordstyle=\color{red},            % Palabras clave en rojo
-  %identifierstyle=\ttfamily,
-  %commentstyle=\color{blue},           % comentarios en azul
-  commentstyle=\color{gray45},
-  stringstyle=\color{green},           % cadenas en verde
-	%showstringspaces=false
-  language=C,                          	% C
-  %backgroundcolor=\color{bgd-listings},
-	%backgroundcolor=\color{yellow},     	% Códigos sobre fondo amarillo
-	%frame=lines,                        	% Línea arriba y abajo de cada listado de código
-  %framerule=0pt,
-  %basicstyle=\small\ttfamily,
-	basicstyle=\scriptsize,                   	% Listados en tiny
-	captionpos=b,													% Posición de los títulos abajo (bottom)
-  keywordstyle=\bfseries,
-	%keywordstyle=\color{black}\textbf,   	% BGD: Palabras clave en negro y negrita
-	identifierstyle=\color{black}\ttfamily, % BGD: Identificadores en negro	
-	commentstyle=\color{blue}\textit,  	 	% BGD: Comentarios en azul cursiva
-  stringstyle=\ttfamily,
-	%stringstyle=\color{red}\texttt,       % BGD: Cadenas en rojo
-	directivestyle=\color{oscuro}\texttt,	
-  emph={pragma,llc,omp},								% BGD: Resaltar las palabras pragma, llc y omp
-	emphstyle=\textbf,
-	showstringspaces=false,								% BGD: No mostar espacios
-	columns=fixed,
-	basewidth={0.6em, 0.45em},
-	xleftmargin=5mm,
-	keepspaces=true,											% BGD: Mantener espacios
-	framexleftmargin=5mm,									% BGD: Margen izquierdo de los marcos (para que quepan num. de línea) 
-	frame=trbl,														% BGD: Cuadro  (t/T: top, r/R: right, b/B: bottom, l/L: left): x->thin, X->thick
-	%frame=trBL,												  % BGD: Cuadro  (t/T: top, r/R: right, b/B: bottom, l/L: left): x->thin, X->thick
-	framesep=4pt,
-	%frameround=fttt,											% BGD: Cuadro con esquina curvadas
-  %framextopmargin=3pt,
-  %framexbottommargin=3pt,
-  %framexleftmargin=0.4cm,
-  %framesep=0pt,
-	rulesepcolor=\color{black},						% BGD: Color de los cuadros azul
-	numbers=left,													% BGD: Números de línea a la izquierda
-	firstnumber=1,												% BGD: Número línea empieza en 0 (línea vacía, no se muestra)
-	stepnumber=1,													% BGD: Números línea a línea
-	numberstyle=\scriptsize,										% BGD: Números de línea pequeños
-	numbersep=8pt,												% BGD: Números de línea separados 8 pts a la izquierda
-	numberblanklines=false,								% BGD: No pone números de línea en líneas vacías
-	extendedchars=true,									  % BGD: Utiliza caracteres extendidos (tildes, etc.)
-	inputencoding=latin1,									
-  %inputencoding=utf8x,									
-	tabsize=2,														% BGD: Tamaño de tabulador para indentaciones = 2
-	breaklines=true,											% BGD: Cortar líneas si son muy grandes
-	breakautoindent=true,									% BGD: Autoindentar líneas cortadas
-	postbreak=\space											% BGD: Cortar líneas por espacios
+\lstset{language=C++,
+        basicstyle=\scriptsize\ttfamily,
+        commentstyle=\color{blue},           % comentarios en azul
+        keywordstyle=\bfseries,
+        stringstyle=\color{red}\ttfamily,
+        morecomment=[l][\color{magenta}]{\#}
+        framexleftmargin=5mm,									% BGD: Margen izquierdo de los marcos (para que quepan num. de línea) 
+        frame=trbl,														% BGD: Cuadro  (t/T: top, r/R: right, b/B: bottom, l/L: left): x->thin, X->thick
+        framesep=4pt,
 }
+%\usepackage{listings} 
+%\lstloadlanguages{C++}
+%\lstset{
+%  language=C++,                        % C
+%  keywordstyle=\color{red},            % Palabras clave en rojo
+%  identifierstyle=\ttfamily,
+%  commentstyle=\color{blue},           % comentarios en azul
+%  stringstyle=\color{green},           % cadenas en verde
+%	%showstringspaces=false
+%  language=C,                          	% C
+%  %backgroundcolor=\color{bgd-listings},
+%	%backgroundcolor=\color{yellow},     	% Códigos sobre fondo amarillo
+%	%frame=lines,                        	% Línea arriba y abajo de cada listado de código
+%  %framerule=0pt,
+%  %basicstyle=\small\ttfamily,
+%	basicstyle=\scriptsize,                   	% Listados en tiny
+%	captionpos=b,													% Posición de los títulos abajo (bottom)
+%  keywordstyle=\bfseries,
+%	%keywordstyle=\color{black}\textbf,   	% BGD: Palabras clave en negro y negrita
+%	identifierstyle=\color{black}\ttfamily, % BGD: Identificadores en negro	
+%	commentstyle=\color{blue}\textit,  	 	% BGD: Comentarios en azul cursiva
+%  stringstyle=\ttfamily,
+%	%stringstyle=\color{red}\texttt,       % BGD: Cadenas en rojo
+%	directivestyle=\color{oscuro}\texttt,	
+%  emph={pragma,llc,omp},								% BGD: Resaltar las palabras pragma, llc y omp
+%	emphstyle=\textbf,
+%	showstringspaces=false,								% BGD: No mostar espacios
+%	columns=fixed,
+%	basewidth={0.6em, 0.45em},
+%	xleftmargin=5mm,
+%	keepspaces=true,											% BGD: Mantener espacios
+%	framexleftmargin=5mm,									% BGD: Margen izquierdo de los marcos (para que quepan num. de línea) 
+%	frame=trbl,														% BGD: Cuadro  (t/T: top, r/R: right, b/B: bottom, l/L: left): x->thin, X->thick
+%	framesep=4pt,
+%	%frameround=fttt,											% BGD: Cuadro con esquina curvadas
+%  %framextopmargin=3pt,
+%  %framexbottommargin=3pt,
+%  %framexleftmargin=0.4cm,
+%  %framesep=0pt,
+%	rulesepcolor=\color{black},						% BGD: Color de los cuadros azul
+%	numbers=left,													% BGD: Números de línea a la izquierda
+%	firstnumber=1,												% BGD: Número línea empieza en 0 (línea vacía, no se muestra)
+%	stepnumber=1,													% BGD: Números línea a línea
+%	numberstyle=\scriptsize,										% BGD: Números de línea pequeños
+%	numbersep=8pt,												% BGD: Números de línea separados 8 pts a la izquierda
+%	numberblanklines=false,								% BGD: No pone números de línea en líneas vacías
+%	extendedchars=true,									  % BGD: Utiliza caracteres extendidos (tildes, etc.)
+%	inputencoding=latin1,									
+%  %inputencoding=utf8x,									
+%	tabsize=2,														% BGD: Tamaño de tabulador para indentaciones = 2
+%	breaklines=true,											% BGD: Cortar líneas si son muy grandes
+%	breakautoindent=true,									% BGD: Autoindentar líneas cortadas
+%	postbreak=\space											% BGD: Cortar líneas por espacios
+%}
+
 %% minimizar fragmentado de listados
 %\lstnewenvironment{listing}[1][]
 %   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
@@ -101,8 +110,7 @@
 \newcommand{\jutge}{\textit{Jutge.org}{}}           % BGD: Nuevos comandos para imprimir con estilo
 \newcommand{\ChatGPT}{\textit{ChatGPT}{}}           % BGD: Nuevos comandos para imprimir con estilo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{El impacto de los asistentes basados en IA en la enseñanza-aprendizaje de la programación}
-
+\title{El impacto de asistentes basados en IA en la enseñanza-aprendizaje de la programación}
 %\author{\normalsize 
 %\begin{tabular}{@{\extracolsep{3mm}}cc}
 %{\large Joe Miró Julià }                  & {\large Mercedes Marqués}\\
@@ -137,16 +145,12 @@ fsande@ull.es
 \end{abstract}
 
 \section*{Abstract}
-\noindent Abstract Pedirle que los ids del código sean significativos.
+\noindent Abstract 
 
 \section*{Palabras clave}
 \noindent Programación IA ChatGPT GitHub Copilot Enseñanza Informática Evaluación
 
 \section{Pruebas}
-
-Comenzar a hablar de lo que hacems en IB para evaluar las prácticas de programación.
-Descripción de la asignatura, temario, etc.
-
 chatGPT \cite{Zhang:2020:chatgpt, Castelvecchi:2022:ACaA}
 
 AlphaCode \cite{Li:2022:CCG}
@@ -159,15 +163,22 @@ con patrones de codificación inseguros, lo que da lugar a la posibilidad de sin
 estos patrones indeseables".
 
 \section{Introducción}
-\textit{Informática Básica} (IB, de ahora en adelante) es una asignatura de 6 créditos que se imparte en el primer cuatrimestre 
+La programación es una actividad transversal a cualquier rama de la informática y su
+importancia es compartida por cualquier especialización en esta titulación.
+\textit{Informática Básica} (IB, de ahora en adelante) es la primera asignatura en la que el alumnado toma 
+contacto con esta materia y en la que ha de aprender los fundamentos de la misma.
+Los conceptos objeto de estudio son comunes, con pequeñas variaciones, a cualquier lenguaje de programación
+orientado a objetos, que es el paradigma objeto de estudio en IB.
+
+IB es una asignatura de 6 créditos que se imparte en el primer cuatrimestre 
 del primer curso del Grado en Ingeniería Informática en la Escuela Superior de Ingeniería y Tecnología de la
 Universidad de La Laguna.
-
-Se trata de la primera asignatura (y única en ese primer cuatrimestre) de perfil eminentemente informático que
+Se trata de la primera asignatura (y única en ese primer  cuatrimestre) de perfil eminentemente informático que
 cursa el alumnado del título de Grado.
+
 El número de estudiantes que habitualmente cursa la asignatura está en torno a los 250. 
 Los contenidos de la asignatura pueden consultarse en la Guía Docente \cite{ULL:2022:GD} de la misma.
-Al margen de un par de temas dedicados a una introducción a las Bases de Datos, Redes y Sistemas Operativos,
+Al margen de tres temas dedicados a una introducción a las Bases de Datos, Redes y Sistemas Operativos,
 el grueso de los contenidos (en torno a 12 de las 15 semanas del cuatrimestre) se dedican a introducir al
 alumnado en la materia de Programación, siendo C++ el lenguaje vehicular elegido para estudiar la materia.
 Se trata de una asignatura con una importante proporción de contenidos prácticos en la que cada estudiante
@@ -177,9 +188,6 @@ recibe 4 horas presenciales de clase a la semana distribuídas del siguiente mod
   \item 1 hora dedicada a la resolución de Problemas
   \item 1 horas de Prácticas
 \end{itemize}
-La Guía docente establece que por cada hora de trabajo presencial, cada estudiante debería dedicar en 
-promedio 1,5 horas de trabajo autónomo, de modo que se espera unas 6 horas de trabajo autónomo semanal por 
-parte de cada estudiante. 
 Se describe a continuación el tipo de actividades que se desarrolla en cada una de este tipo de sesiones.
 
 Las sesiones destinadas a contenidos teóricos se imparten con el formato de clase expositiva y se dedican, 
@@ -193,26 +201,26 @@ En las sesiones de problemas el profesorado utiliza un terminal cuya pantalla se
 resolver algunos problemas seleccionados, resolviendo al mismo tiempo las dudas que puedan surgir en esa
 resolución. 
 
+La Guía docente establece que por cada hora de trabajo presencial, cada estudiante debería dedicar en 
+promedio 1,5 horas de trabajo autónomo, de modo que se espera unas 6 horas de trabajo autónomo semanal por 
+parte de cada estudiante. 
+A pesar de que el peso de los contenidos prácticos de la asignatura suponen solo un 20\% del total de la
+calificación de la asignatura, se espera que la mayor parte de ese tiempo se destine al diseño y desarrollo 
+de programas de complejidad creciente conforme avanza el desarrollo del curso, y que se evalúan en las
+sesiones prácticas.
+
 Cada semana al alumnado se le propone la realización de una práctica, consistente en un cierto número (cinco
-es el número frecuente) de programas en C++ relacionados con algún tema estudiado.
-Esos programas tienen el propósito de servir de "entrenamiento" para el alumnado para afianzar conocimientos y
-el alumnado dispone de una semana para realizar esos ejercicios.
+es un número habitual) de programas en C++ relacionados con algún tema estudiado.
+Esos programas tienen el propósito de servir de "entrenamiento" para que el alumnado afiance conocimientos a
+lo largo de la semana de la que disponen para realizar esos ejercicios.
 La sesión semanal de prácticas se destina a la evaluación de esos conocimientos a través de la realización de
 ejercicios de programación de complejidad similar a los que han sido propuestos con antelación.
-En algunos casos los ejercicios de evaluación son simples modificaciones de los que se han propuesto para
-realizar con antelación.
+En las últimas prácticas de la asignatura los ejercicios de evaluación suelen ser simples modificaciones de 
+los que se han propuesto para realizar con antelación.
 
-% Porcentajes de la evaluación
 % 10 minutos para cuestionarios
 
 \section{Motivación}
-La programación es una actividad transversal a cualquier especialización de la informática y su
-importancia es compartida por cualquier rama en esta titulación.
-IB es la primera asignatura en la que el alumnado toma contacto con esta materia y en la que ha de aprender
-los fundamentos de la misma.
-Los conceptos objeto de estudio son comunes, con pequeñas variaciones, a los diferentes lenguajes de programación.
-En IB hemos decidido optar por C++ como lenguaje vehicular.
-
 Más allá del ineludible aprendizaje de los conceptos básicos de la materia, 
 es un hecho bien conocido que la práctica es fundamental para aprender a programar ordenadores. 
 Habitualmente el profesorado asigna problemas de programación al alumnado para ayudarles a adquirir esta 
@@ -220,40 +228,87 @@ destreza, y el incremento de las habilidades de una programadora pasa ineludible
 a la realización de programas de complejidad creciente.
 Forzando un poco las similitudes podríamos decir que la programación se asemeja a las habilidades para
 conducir un automóvil: cualquier persona con permiso para conducir puede decir que conduce correctamente, pero
-decir que se es una buena conductora requiere muchas horas de práctica y exposición a situaciones anormales.
+acreditar que se es una buena conductora requiere muchas horas de práctica y exposición a situaciones
+infrecuentes.
 Del mismo modo cualquier informático dirá que sabe programar pero sus habilidades en esta materia dependerán
-muy directamente del número de horas de entrenamiento que se hayan dedicado a la misma.
-Siguiendo esta idea, recomendamos encarecidamente al alumnado de IB que realicen cuantos ejercicios prácticos
-sean capaces para, de forma progresiva, ir incrementando sus capacidades como programadores.
+muy directamente de las horas de práctica que haya dedicado a la misma.
+Siguiendo esta idea, recomendamos encarecidamente al alumnado de IB que realice cuantos ejercicios prácticos
+sean capaces para, de forma progresiva, ir incrementando sus capacidades como programadoras.
 
 Las prácticas de la asignatura se convierten pues en una oportunidad para que el alumnado mejore destrezas y
 habilidades que le capaciten para abordar los contenidos de asignaturas de cursos posteriores de la
 titulación.
+
 La masificación de los grupos de laboratorio de prácticas, con grupos de hasta 20 estudiantes por sesión son
 la mayor dificultad para la evaluación de esos trabajos prácticos.
 Esta dificultad es compartida por muchas otras asignaturas de la titulación que tienen una significativa
 componente práctica en sus contenidos, de modo que casi todas las cuestiones que en este trabajo queremos
 plantear son comunes a muchas asignaturas e incluso a otras titulaciones.
 
-% La evaluación de las prácticas de programación del alumnado de IB ha sido siempre una dificultad en el
-% desempeño docente de esta asignatura. 
-% 
-% Esta dificultad es polifacética y no se puede analizar desde un único punto de vista.
+Una vez realizadas tres prácticas iniciales en las que el alumnado se familiariza con el Sistema Operativo
+Linux, con el entorno de máquina virtual en el que desarrollará sus programas y con el editor \texttt{vim}, 
+que es el que se utiliza inicialmente, todas las prácticas restantes abordan contenidos de programación que
+cubren los siguientes tópicos:
+\begin{itemize}
+  \item Primeros programas y conceptos básicos
+  \item Expresiones y tipos de datos
+  \item Alternativas
+  \item Iteraciones
+  \item Funciones
+  \item Cadenas de texto (\texttt{std:string})
+  \item \texttt{std::array} y \texttt{std::vector}
+  \item Ficheros
+  \item Introducción a la Programación Orientada a Objetos
+\end{itemize}
 
 Desde hace ya varios cursos en IB se viene usando la plataforma \jutge{} (juez) 
-\cite{URL::Jutge, Petit:Jutge:2018} para la evaluación de las prácticas de IB.
-Se trata de una plataforma que ha sido desarrollada en la Universidad Politécnica de Catalunya y que ha sido
+\cite{URL::Jutge, Petit:Jutge:2018} para la evaluación de las prácticas.
+Se trata de una plataforma que ha sido desarrollada en la Universidad Politécnica de Catalunya,
 diseñada tanto para profesorado como para alumnado.
 La plataforma aloja una gran cantidad de problemas (aproximadamente unos 2100) que cubren diversidad de
 tópicos incluyendo entre ellos los fundamentos de la programación.
 Los problemas están perfectamente descritos y contienen un conjunto de tests que el código de usuario ha de
-superar para que la plataforma otorgue al envío de un estudiante un veredicto AC (\textit{Aceptado}).
+verificar.
 Como una de sus características, \jutge{} hace hincapié en el trabajo del alumno, por lo que 
 resulta especialmente útil para reforzar el enfoque de aprender haciendo, en nuestro caso, programando.
 
-Jutge evalúa por sí solo.
+El modo de funcionamiento de \jutge{} requiere que cuando un estudiante resuelve un problema suba el código
+fuente de su solución a la plataforma.
+\jutge{} comprueba que la solución sea correcta pasando los correspondientes tests, de los cuales algunos son públicos
+y otros privados.
+A una solución se le asigna el veredicto AC (\textit{Accepted}) cuando pasa todos los tests existentes para el problema.
+En su cuenta de \jutge{} cada estudiante dispone de un cuadro de mandos en el que se recopila el número de
+envíos que ha realizado, el de problemas aceptados y rechazados así como diversos gráficos que muestran su
+evolución en su trabajo con la plataforma.
 
-Primera criba. En IB se evalúan otros aspectos: mencionar
+Este modo de trabajo se aprovecha en las prácticas de IB: en cada sesión de evaluación se le pide al alumnado
+que resuevla un pequeño número de problemas (programas) de \jutge{}.
+La evaluación de la sesión depende no solo del número de problemas resuelto (no suelen ser más de dos o tres)
+sino de la calidad del código desarrollado.
+\jutge{} comprueba exclusivamente que el código evaluado funcione correctamente, mientras que en IB se
+enfatizan otros aspectos del código que nos parecen tanto o más relevantes que el propio funcionamiento del
+mismo, que obviamente es un requisito ineludible.
+Muchos de los requisitos que se exigen a los programas de prácticas de IB se definen en la Guía de estilo de 
+referencia que se sigue en la asignatura \cite{Google::GSG}.
+Relacionamos a continuación algunos de los requisitos exigidos, que obviamente se introducen al alumnado de
+forma progresiva:
+\begin{itemize}
+\item Correcto sangrado del código
+\item Adecuado uso de espacios y signos de puntuación en el código
+\item Adhesión a las reglas de nombrado de identificadores de variables, funciones, clases, etc.
+\item Que todos los identificadores utilizados (salvo excepciones puntuales) sean significativos, evitando el
+  uso de "identificadores de un único carácter".
+\item Que todos los ficheros, funciones y métodos del código incluyan un breve prólogo con comentarios en
+  formato Doxygen exponiendo la información más relevante sobre el elemento (función, clase, fichero, ...) en
+    cuestión.
+\item Que la compilación de todos los programas se automatice mediante el uso de herramientas como
+  \texttt{make} o \texttt{cmake}.
+\item Que los parámetros de tipos estructurados que se pasen a una función/método estén sean referencias
+  constantes.
+\item Que los métodos definidos en las clases de los programas sean \textit{const friendly}.
+\end{itemize}
+
+
 
 Problema del plagio, ...
 
@@ -315,63 +370,34 @@ A pesar de haberlo indicado en el enunciado del problema, la función entregada 
 establece la Guía de Estilo de Google, pero si se le indica esa circunstancia, el bot corrige el identificador
 de la función. 
 El código completo de la función es el que se muestra en el Listado
+%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[t]
+%\begin{lstlisting}[firstnumber=1,caption={Test de primalidad suministrado por \ChatGPT{}},label=code:mandel_seq,float=[htb]]
+%\begin{lstlisting}[firstnumber=1,caption={Test de primalidad suministrado por \ChatGPT{}},label=code:prime,float,floatplacement=tbph]
+\begin{lstlisting}[caption={Test de primalidad suministrado por \ChatGPT{}. Complejidad $O(\sqrt(n))$},label=code:prime]
+/**
+ * @brief Function that determines if a given number is prime or not.
+ *
+ * @param number The number to check for primality.
+ * @return true if the number is prime, false otherwise.
+ */
+bool IsPrime(int number) {
+  if (number <= 1) return false;  // 1 and 0 are not considered prime.
+  if (number <= 3) return true;  // 2 and 3 are prime.
+  if (number % 2 == 0 || number % 3 == 0) return false;  // Check for divisibility by 2 and 3.
+  for (int i = 5; i * i <= number; i += 6) {  // Check for divisibility by numbers of the form 6k +/- 1.
+    if (number % i == 0 || number % (i + 2) == 0) return false;
+  }
+  return true;
+}
+\end{lstlisting}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 En el caso de \textit{Primality}, en una sesión diferente con \ChatGPT{} se le ha entregado el enunciado en español y
 en ese caso, el bot entrega directamente la solución con la optimización del código, pero el código no cumple
 con el estándar de Estilo en cuanto a la colocación de las llaves de apertura y cierre de bloques en C++.
 
-
-
-\section{Extensión}
-
-El número máximo de páginas que se pueden utilizar es de 8~páginas para las ponencias 
-y para las descripciones de los recursos docentes, y de 4~páginas para los pósteres 
-(en ediciones anteriores, los pósteres estaban limitados a 2~páginas). 
-Es imprescindible que los autores utilicen el formato y se ajusten al espacio ya 
-desde la primera versión que se someta al proceso de revisión. Lo contrario implicaría 
-el rechazo de la contribución.
-
-\section{Listas}
-
-A menudo encontramos listas en las ponencias de las Jenui. 
-Cada elemento de la lista va precedido de un símbolo o un número y 
-el texto de la lista usa de una línea más estrecha que la del texto. 
-Las normas de edición de las listas se muestran a continuación.
-
-\begin{itemize}
-	\item Los símbolos que preceden a cada elemento de la lista son 
-	números en el caso de listas enumeradas o \emph{balas} 
-	($\bullet$) si la lista no está enumerada.
-	
-	\item La distancia del margen izquierdo del texto de la lista al
-	margen izquierdo de la columna (el texto normal) es de 7~mm.  El
-	margen derecho de la lista es el mismo que el margen derecho de la
-	columna. Es decir, que la anchura de texto de la lista es de 69,5~mm.
-	
-	\item La distancia del extremo derecho del símbolo al texto de la 
-	lista es de 1,5 mm. Los números crecen hacia la izquierda: si hay 
-	un número de dos dígitos, el segundo dígito acaba a 1,5 mm del 
-	texto de la lista.
-	
-	\item La distancia adicional del primer elemento de la lista al texto que 
-	le precede es aproximadamente de 1,4~mm. Esta también es la distancia adicional del último 
-	elemento de la lista al texto que le sucede.
-	
-	\item Está prohibido tener más de un nivel de 
-	listas. Es decir, no se pueden tener listas dentro de listas.
-\end{itemize}
-
-\section{Figuras y cuadros}
-
-Las figuras y los cuadros pueden ir dentro de una columna (anchura 
-máxima 76,5~mm) o dentro del cuerpo (anchura máxima 160~mm). En ambos 
-casos la figura o el cuadro van centrados dentro de la columna o el 
-cuerpo. Ambas van numeradas y tienen numeraciones independientes. El 
-pie de figura o cuadro empieza con \emph{Figura n:} o \emph{Cuadro 
-n:} y usa texto normal a 10~puntos. El pie  va separado 
-aproximadamente por la altura de una línea (4~mm) a la figura o 
-cuadro y está centrado. La distancia entre el pie y el texto es de 
-aproximadamente dos líneas (9~mm).
 
 %%%%%%%%%%%%%%%%%%%% Fig. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{figure}[htbp]
