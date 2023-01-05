@@ -316,7 +316,6 @@ número de estudiantes en el aula de prácticas y con un tiempo tan limitado se 
 casi exclusivamente el trabajo que el estudiante realiza \textit{in situ} en la sesión de evaluación, y no los
 ejercicios que durante la semana ha realizado en calidad de preparación para esa evaluación.
 
-
 En junio de 2021, GitHub lanzó \textit{Copilot} 
 %\cite{Friedman:2021:IGC}
 %\cite{Dakhel:2022:GCA},
@@ -353,7 +352,6 @@ actual, estos asistentes no van a suponer la desaparición de los programadores 
 también es incuestionable el papel que estos asistentes pueden llegar a tener en la toma de decisiones en
 diversos campos 
 \cite{Kung:2022:PCU}.
-%\cite{Lesk:1975:LLA}.
 
 %con patrones de codificación inseguros, lo que da lugar a la posibilidad de sintetizar código que contenga estos patrones indeseables".
 
@@ -403,6 +401,71 @@ sesión) del tipo:
 Es más, al tratarse de un bot interactivo, si la solución que entrega el sistema no es satisfactoria en algún
 sentido, se le puede pedir que refactorice el código para cumplir con algún requisito y en ese caso en general
 el sistema adecúa su respuesta para cumplir con el requerimiento.
+
+Consideremos el problema
+\href{https://jutge.org/problems/P36430_en/statement}{\textit{Fermat's last theorem (1)}}.
+La descripción que se entrega inicialmente a \ChatGPT{}, copiada casi literalmente de \jutge{} es la
+siguiente:
+%%%%%%%%%%%%%%%%%%%%%%%% Cita %%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{center}
+    \begin{minipage}{\linewidth}
+        %\vspace{5pt}%margen superior de minipage
+        {\small
+A famous theorem of the mathematician Pierre de Fermat, proved after more than 300 years, 
+states that, for any natural number $n \geq 3$, there is no natural solution (except for x=0 or y=0) to the equation
+ $x^n + y^n = z^n$
+
+For $n=2$, by contrast, there are infinite non-trivial solutions. 
+For instance, $3^2 + 4^2 = 5^2$, $5^2 + 12^2 = 13^2$, $6^2 + 8^2 = 10^2$, ...
+
+Write a C++ program that, given four natural numbers a, b, c, d with $a \leq b$ and $c \leq d$, prints a natural solution to the equation
+  $x^2 + y^2 = z^2$
+such that $a \leq x \leq b$ and $c \leq y \leq d$.
+
+The program input consists of four natural numbers a, b, c, d such that $a<=b$ and $c<=d$.
+
+The program output should be a line with a natural solution to the equation
+  $x^2 + y^2 = z^2$
+that fulfills $a \leq x \leq b$ and $c \leq y \leq d$. 
+
+If there is more than one solution, print the one with the smallest x. 
+
+If there is a tie in x, print the solution with the smallest y. 
+
+If there are no solutions, print ``No solution!''.
+
+For example, if the input is:
+\texttt{2 5 4 13}
+
+The output should be
+
+\texttt{3} \texttt{\^} \texttt{2 + 4} \texttt{\^} \texttt{2 = 5} \texttt{\^} \texttt{2}
+
+and if the input is:
+\texttt{1 1 1 1}
+
+     The output should be 
+\texttt{No solution!}
+        }
+        %\vspace{5pt}%margen inferior de la minipage
+    \end{minipage}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+y con ella, el bot entrega una solución que es aceptada (AC) por \jutge{} pero que no cumple algunos de los
+requisitos que se exigen en IB.
+Después de sucesivas interacciones con el bot en el que se le indica:
+\begin{enumerate}
+  \item Could you please avoid the use of single character identifiers and use meaningful names instead?
+  \item Please, use a function called from main() in your solution
+  \item Can yoy make your code compliant with the Google Style Guide for C++?
+  \item Can you avoid the use of ``\texttt{using namespace std}''?
+  \item Can you write a space on both sides of any binary operator, as the Google Style Guide for C++ requires?
+  \item Can you finally include Doxygen format header comments in the code?
+\end{enumerate}
+Se obtiene un código que es aceptado por \jutge{} y que cumple los requisitos exigidos al alumnado de IB en la
+evaluación de sus prácticas.
+
+
 Así por ejemplo, en el problema
 \href{https://jutge.org/problems/P18203_en}{\textit{Fermat's last theorem (2)}}
 se especifica ``\textit{Input has several lines, each one with four natural numbers a, b, c, d such that $a \leq b$ and $c \leq d$.}''
@@ -435,7 +498,7 @@ establece la Guía de Estilo de Google, pero si se le indica esa circunstancia, 
 de la función. 
 El código completo de la función es el que se muestra en el Listado \ref{code:prime}.
 %%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}[t]
+\begin{figure*}[!bt]
 %\begin{lstlisting}[firstnumber=1,caption={Test de primalidad suministrado por \ChatGPT{}},label=code:mandel_seq,float=[htb]]
 %\begin{lstlisting}[firstnumber=1,caption={Test de primalidad suministrado por \ChatGPT{}},label=code:prime,float,floatplacement=tbph]
 \begin{lstlisting}[caption={Test de primalidad suministrado por \ChatGPT{}. Complejidad $O(\sqrt(n))$},label=code:prime]
