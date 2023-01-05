@@ -24,7 +24,7 @@
 \definecolor{gray45}{gray}{.45}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Para listados de código
-\usepackage{listings} 
+\usepackage{listings,multicol}  % <--- multicol only required, if the multicols= option shall be used
 \lstset{language=C++,
         basicstyle=\scriptsize\ttfamily,
         commentstyle=\color{blue},           % comentarios en azul
@@ -150,7 +150,7 @@ fsande@ull.es
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section*{Palabras clave}
-\noindent Programación IA ChatGPT GitHub Copilot Enseñanza Informática Evaluación
+\noindent Programación Asistentes IA ChatGPT Enseñanza Informática Evaluación
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Introducción}
@@ -402,15 +402,26 @@ Es más, al tratarse de un bot interactivo, si la solución que entrega el siste
 sentido, se le puede pedir que refactorice el código para cumplir con algún requisito y en ese caso en general
 el sistema adecúa su respuesta para cumplir con el requerimiento.
 
-Consideremos el problema
-\href{https://jutge.org/problems/P36430_en/statement}{\textit{Fermat's last theorem (1)}}.
-La descripción que se entrega inicialmente a \ChatGPT{}, copiada casi literalmente de \jutge{} es la
-siguiente:
+Así por ejemplo, en el problema
+\href{https://jutge.org/problems/P36430_en/statement}{\textit{Fermat's last theorem (1)}}
+se especifica ``\textit{Input consists of four natural numbers a, b, c, d such that $a \leq b$ and $c \leq d$.}'' 
+lo cual produce que la primera versión que el bot entrega para la solución de ese problema utiliza 
+\textit{a, b, c,} y \textit{d} para los identificadores de esas variables.
+
+En ese mismo problema se muestra a continuación la descripción que se entregó inicialmente
+a \ChatGPT{}, copiada casi literalmente de \jutge{}:
 %%%%%%%%%%%%%%%%%%%%%%%% Cita %%%%%%%%%%%%%%%%%%%%%%%% 
-\begin{center}
-    \begin{minipage}{\linewidth}
-        %\vspace{5pt}%margen superior de minipage
-        {\small
+%\begin{center}
+%    \begin{minipage}{\linewidth}
+%        %\vspace{5pt}%margen superior de minipage
+%        {\small
+%        }
+%        %\vspace{5pt}%margen inferior de la minipage
+%    \end{minipage}
+%\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%% Quote %%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{quote}
 A famous theorem of the mathematician Pierre de Fermat, proved after more than 300 years, 
 states that, for any natural number $n \geq 3$, there is no natural solution (except for x=0 or y=0) to the equation
  $x^n + y^n = z^n$
@@ -446,11 +457,8 @@ and if the input is:
 
      The output should be 
 \texttt{No solution!}
-        }
-        %\vspace{5pt}%margen inferior de la minipage
-    \end{minipage}
-\end{center}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\end{quote}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 y con ella, el bot entrega una solución que es aceptada (AC) por \jutge{} pero que no cumple algunos de los
 requisitos que se exigen en IB.
 Después de sucesivas interacciones con el bot en el que se le indica:
@@ -465,12 +473,7 @@ Después de sucesivas interacciones con el bot en el que se le indica:
 Se obtiene un código que es aceptado por \jutge{} y que cumple los requisitos exigidos al alumnado de IB en la
 evaluación de sus prácticas.
 
-
-Así por ejemplo, en el problema
-\href{https://jutge.org/problems/P18203_en}{\textit{Fermat's last theorem (2)}}
-se especifica ``\textit{Input has several lines, each one with four natural numbers a, b, c, d such that $a \leq b$ and $c \leq d$.}''
-
-Consideremos a modo de ejemplo el problema 
+Consideremos a continuación el problema 
 \href{https://jutge.org/problems/P48713_en}{\textit{Primality}}.
 (P48713).
 Se trata de determinar si cada uno de los números naturales de una secuencia es o no primo.
@@ -481,6 +484,9 @@ Esta solución no recibe el veredicto ``\textit{Accepted}'' en \jutge{} sino que
 como veredicto \textit{Execution Error (time limit exceeded)}.
 Ello se debe a que espera un algoritmo más eficiente para este cómputo.
 
+%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstinputlisting[float=*t, caption={Test de primalidad suministrado por \ChatGPT{}. Complejidad $O(\sqrt(n))$}, label=code:prime]{prime.cc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Esta solución es la que cabría esperar de un estudiante de primer curso de informática.
 Con frecuencia observamos estudiantes que ofrecen un algoritmo óptimo y ello es una pista para detectar que,
 posiblemente han hallado la solución en algún foro. 
@@ -497,32 +503,9 @@ A pesar de haberlo indicado en el enunciado del problema, la función entregada 
 establece la Guía de Estilo de Google, pero si se le indica esa circunstancia, el bot corrige el identificador
 de la función. 
 El código completo de la función es el que se muestra en el Listado \ref{code:prime}.
-%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}[!bt]
-%\begin{lstlisting}[firstnumber=1,caption={Test de primalidad suministrado por \ChatGPT{}},label=code:mandel_seq,float=[htb]]
-%\begin{lstlisting}[firstnumber=1,caption={Test de primalidad suministrado por \ChatGPT{}},label=code:prime,float,floatplacement=tbph]
-\begin{lstlisting}[caption={Test de primalidad suministrado por \ChatGPT{}. Complejidad $O(\sqrt(n))$},label=code:prime]
-/**
- * @brief Function that determines if a given number is prime or not.
- *
- * @param number The number to check for primality.
- * @return true if the number is prime, false otherwise.
- */
-bool IsPrime(int number) {
-  if (number <= 1) return false;  // 1 and 0 are not considered prime.
-  if (number <= 3) return true;  // 2 and 3 are prime.
-  if (number % 2 == 0 || number % 3 == 0) return false;  // Check for divisibility by 2 and 3.
-  for (int i = 5; i * i <= number; i += 6) {  // Check for divisibility by numbers of the form 6k +/- 1.
-    if (number % i == 0 || number % (i + 2) == 0) return false;
-  }
-  return true;
-}
-\end{lstlisting}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 En el caso de \textit{Primality}, en una sesión diferente con \ChatGPT{} se le ha entregado el enunciado en español y
-en ese caso, el bot entrega directamente la solución con la optimización del código, pero el código no cumple
+en ese caso, el bot entrega directamente la solución con la optimización del código, pero la solución no cumple
 con el estándar de Estilo en cuanto a la colocación de las llaves de apertura y cierre de bloques en C++.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
