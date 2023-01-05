@@ -144,12 +144,15 @@ fsande@ull.es
 \noindent Abstract
 \end{abstract}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section*{Abstract}
 \noindent Abstract 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section*{Palabras clave}
 \noindent Programación IA ChatGPT GitHub Copilot Enseñanza Informática Evaluación
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Introducción}
 La programación es una actividad transversal a cualquier rama de la informática y su
 importancia es compartida por cualquier especialización en esta titulación.
@@ -211,6 +214,7 @@ los que se han propuesto para realizar con antelación.
 
 % 10 minutos para cuestionarios
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Motivación}
 Más allá del ineludible aprendizaje de los conceptos básicos de la materia, 
 es un hecho bien conocido que la práctica es fundamental para aprender a programar ordenadores. 
@@ -293,6 +297,7 @@ forma progresiva:
 \item Adhesión a las reglas de nombrado de identificadores de variables, funciones, clases, etc.
 \item Que todos los identificadores utilizados (salvo excepciones puntuales) sean significativos, evitando el
   uso de ``identificadores de un único carácter''.
+\item Los programas deben escribirse de forma modular incorporando diversas funciones en la solución.
 \item Que todos los ficheros, funciones y métodos del código incluyan un breve prólogo con comentarios en
   formato Doxygen exponiendo la información más relevante sobre el elemento (función, clase, fichero, ...) en
     cuestión.
@@ -326,15 +331,14 @@ Según resultados publicados en \textit{Sience} \cite{Li:2022:CCG}, \textit{Alph
 de ocasiones a humanos en competiciones de resolución de problemas de programación.
 
 El pasado 30 de noviembre, \textit{OpenAI} lanzó \ChatGPT{}
-%
-%\cite{Zhang:2020:chatgpt}, 
-%
-un \textit{chatbot} interactivo de propósito general.
-basado en el modelo GPT-3.5 que se ajusta con técnicas de aprendizaje supervisado y de
-refuerzo.
+\cite{Zhang:2020:chatgpt}, 
+un \textit{chatbot} interactivo de propósito general basado en GPT-3.5
+\cite{Floridi:2020:GPT-3},
+un modelo lingüístico autorregresivo de tercera generación que utiliza \textit{DeepLearning} para producir textos 
+similares a los escritos por humanos.
 
 Tanto \ChatGPT{} como \textit{AlphaCode} son ``grandes modelos lingüísticos'', es decir, sistemas basados en 
-redes neuronales que aprenden a realizar una tarea a partir de cantidades ingentes de texto generado por humanos. 
+redes neuronales que aprenden a realizar una tarea a partir de ingentes cantidades de texto generado por humanos. 
 De hecho, ambos sistemas utilizan prácticamente la misma arquitectura, siendo la principal diferencia entre
 ellos el conjunto de datos con que son entrenados, lo cual los dirige a diferente tipo de tareas.
 Posiblemente debido a que se trata de un asistente de propósito general, capaz de discutir sobre materias tan dispares 
@@ -353,17 +357,59 @@ diversos campos
 
 %con patrones de codificación inseguros, lo que da lugar a la posibilidad de sintetizar código que contenga estos patrones indeseables".
 
-La siguiente sección aborda el uso de \ChatGPT{} en la realización de prácticas de IB.
-
+La siguiente sección aborda el impacto de \ChatGPT{} en la realización de prácticas de IB.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Experiencias con \ChatGPT{}}
 Todos los enunciados de problemas de \jutge{} están públicamente disponibles en la
 plataforma 
-%\cite{URL::prob} 
 \footnote{Jutge Problems \href{https://jutge.org/problems/}{\scriptsize{\texttt{https://jutge.org/problems/}}}}
-y cada uno de ellos cuenta con una descripción clara y precisa así como un
-conjunto de tests públicos.
+y cada uno de ellos cuenta con una descripción clara y precisa así como un conjunto de tests públicos.
 
-Consideremos a modo de ejemplo el problema \textit{Primality} (P48713).
+Aunque el estudio que se ha realizado no es exhaustivo, hemos utilizado \ChatGPT{} para tratar de resolver
+diversos problemas de \jutge{}. 
+Se ha intentado describir al bot los problemas tanto en inglés (idioma en que están descritos la mayoría de
+los problemas de \jutge{}) como en español.
+Para ello se ha iniciado un nuevo chat con el bot en uno u otro idioma dependiendo del caso.
+Si bien las soluciones que entrega el sistema no son exactamente las mismas, no se han hallado diferencias
+significativas en cuanto a la calidad tanto algorítmica como de estilo en las soluciones obtenidas.
+
+Para que el bot resuelva cualquiera de los problemas no ha resultado necesario suministrarle información
+adicional a la que figura en el propio enunciado de \jutge{}, habiéndosele entregado al bot la información
+correspondiente a la salida que el programa debiera entregar para los diferentes tests públicos de \jutge{}.
+
+Por otra parte, si no se le especifica explícitamente, las soluciones que produce \ChatGPT{} generalmente no
+siguen reglas de estilo o documentación específica, pero si en la especificación del problema se incluyen
+estas reglas como requisito, la solución cumple con los requisitos que se especifican.
+En general, para todos los problemas analizados se han indicado al bot instrucciones (en el idioma de la
+sesión) del tipo:
+%%%%%%%%%%%%%%%%%%%%%%%% Cita %%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{center}
+    \begin{minipage}{\linewidth}
+        %\vspace{5pt}%margen superior de minipage
+        {\small
+        \begin{itemize}
+          \item Base su solución en una función que será invocada desde main().
+          \item El programa debe incluir comentarios de cabecera en formato Doxygen.
+          \item Haga que el código cumpla con los requisitos de la Guía de Estilo de Google para C++.
+          \item Haga que el programa utilice identificadores significativos para todas las variables.
+          \item No utilice identificadores de un único carácter en el programa.
+          \item No incluya en el programa comentarios innecesarios.
+        \end{itemize}
+        }
+        %\vspace{5pt}%margen inferior de la minipage
+    \end{minipage}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+Es más, al tratarse de un bot interactivo, si la solución que entrega el sistema no es satisfactoria en algún
+sentido, se le puede pedir que refactorice el código para cumplir con algún requisito y en ese caso en general
+el sistema adecúa su respuesta para cumplir con el requerimiento.
+Así por ejemplo, en el problema
+\href{https://jutge.org/problems/P18203_en}{\textit{Fermat's last theorem (2)}}
+se especifica ``\textit{Input has several lines, each one with four natural numbers a, b, c, d such that $a \leq b$ and $c \leq d$.}''
+
+Consideremos a modo de ejemplo el problema 
+\href{https://jutge.org/problems/P48713_en}{\textit{Primality}}.
+(P48713).
 Se trata de determinar si cada uno de los números naturales de una secuencia es o no primo.
 Si el enunciado del problema, junto con los tests se le pasan a \ChatGPT{} en inglés, tal como figuran en
 \jutge{}, la solución que obtiene es la más habitual para un programador inexperto, la de fuerza bruta 
@@ -416,65 +462,9 @@ En el caso de \textit{Primality}, en una sesión diferente con \ChatGPT{} se le 
 en ese caso, el bot entrega directamente la solución con la optimización del código, pero el código no cumple
 con el estándar de Estilo en cuanto a la colocación de las llaves de apertura y cierre de bloques en C++.
 
-\section{Bibliografía}
-En el texto se utiliza el número de la referencia, también entre 
-corchetes. Hay tres cuestiones a tener en cuenta: (a) El número de 
-referencia no puede empezar una línea, hay que poner un ``blanco 
-duro'' entre el número de referencia y el texto que lo precede; (b) 
-Si hay varias referencias juntas debe usarse un único par de 
-corchetes: debe ser ``[2, 7, 14]'' y no ``[2][7][14]''; (c) Si hay 
-varias referencias, deben ir en orden numérico ascendente: debe ser  
-``[2, 7, 14]'' y no ``[14, 2, 7]''.
-
-El formato de la bibliografía casi merece un artículo propio. 
-Recomendamos que las referencias bibliográficas se incluyan en un fichero 
-independiente así como el uso del estilo \textit{jenui}. Éste es una adaptación al castellano 
-del clásico estilo \textit{plain}.
-Si se usa un programa bibliográfico como BibTeX, o EndNote no es necesario 
-preocuparse de mucho. En cambio, si se crea la bibliografía a mano 
-recomendamos que se mire este artículo o un libro adecuado como 
-referencia y que se sigan las siguientes normas:
-%
-\begin{itemize}
-	\item Todo debe ir en español.  Si se importa la bibliografía de
-	otra fuente (o se usa BibTeX) es posible que se importen palabras
-	en inglés (``J. García \emph{and} P. Quintero, \emph{editors}'').
-	Debe cambiarse al español\footnote{Usuarios de BibTeX: editad el
-	archivo .bbl justo antes de la última compilación.}. Si se usa el estilo
-	\textit{jenui} no es necesario hacer cambios en el nombre de los meses, 
-	siempre que se hayan usado macros en la definición del campo mes (por ejemplo, 
-	\textit{MONTH = nov,}). Las macros que representan
-	los meses del año están formadas siempre por la tres primeras letras del mes en inglés.
-	Es decir: jan, feb, mar, apr, $\ldots$ y son correctamente interpretadas por  
-	los estilos bibliográficos estándar.
-	
-	\item Deben indicarse los nombres de todos los autores tal y 
-	como lo escriben en el artículo. Si en el artículo los autores 
-	aparecen como ``José García Pérez, Pedro Quintero Madariaga y 
-	\'Alvaro Nogales Echagüe'' en el texto puede ser adecuado escribir 
-	``Tal y como exponen García \emph{et al.}~[5]'' pero en la lista 
-	de referencias no puede aparecer ``García \emph{et al.}'' ni 
-	siquiera ``J. García, P. Quintero y A. Nogales''. 
-	
-	\item Un elemento que no tiene ni título ni autor, no pertenece a 
-	la bibliografía. En esta categoría entran muchas páginas web y 
-	algunos documentos oficiales. Por ejemplo, es mucho mejor 
-	escribir ``Podemos encontrar más información en la web de Moodle 
-	(\url{http://www.moodle.org})'' que ``Podemos encontrar más 
-	información en [11]'' y al ir el lector a la lista de referencias 
-	encontrar ``[11] \url{http://www.moodle.org}''. Si la URL es demasiado 
-	larga para que quepa cómodamente en una columna, entonces mejor 
-	ponerlo como pie de página. 
-	
-\end{itemize}
-
-La lista de referencias usa todo el ancho de la columna.  El número 
-entre corchetes empieza en el margen de la columna, mientras que el margen
-del texto de la referencia está a 9~mm del margen de la columna.
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Conclusiones}
-Si bien la llegada de los asistentes basados en IA a las aulas no implicará que el profesorado no siga siendo
+Si bien la llegada de los asistentes basados en IA a las aulas no implicará que el profesorado deje de ser
 necesario, sí es cierto que estas tecnologías van a impactar en la praxis docente y hemos de adaptar nuestras
 metodologías para incorporar estos cambios.
 
