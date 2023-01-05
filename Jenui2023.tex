@@ -272,7 +272,7 @@ fuente de su solución a la plataforma
 \footnote{\textit{Jutge.org} Home Page \href{https://jutge.org/}{\scriptsize{\texttt{https://jutge.org/}}}}
 donde se comprueba que sea correcta pasando los correspondientes tests, de los cuales algunos son públicos
 y otros privados.
-A una solución se le asigna el veredicto AC (\textit{Accepted}) cuando pasa todos los tests existentes para el problema.
+A una solución se le asigna el veredicto \textit{AC} (\textit{Accepted}) cuando pasa todos los tests existentes para el problema.
 En su cuenta de \jutge{} cada estudiante dispone de un cuadro de mandos en el que se recopila el número de
 envíos que ha realizado, el de problemas aceptados y rechazados así como diversos gráficos que muestran la
 evolución en su trabajo con los problemas de la plataforma.
@@ -364,7 +364,13 @@ plataforma
 y cada uno de ellos cuenta con una descripción clara y precisa así como un conjunto de tests públicos.
 
 Aunque el estudio que se ha realizado no es exhaustivo, hemos utilizado \ChatGPT{} para tratar de resolver
-diversos problemas de \jutge{}. 
+diversos problemas de \jutge{}
+\footnote{
+Todos los programas que se mencionan en este trabajo y que han sido sometidos a la evaluación de \jutge{} se
+han alojado convenientemente documentados en un repositorio privado.
+Cualquier persona interesada en acceder a esos programas puede obtener acceso solicitándolo por correo
+electrónico al autor (\texttt{fsande@ull.es})
+}. 
 Se ha intentado describir al bot los problemas tanto en inglés (idioma en que están descritos la mayoría de
 los problemas de \jutge{}) como en español.
 Para ello se ha iniciado un nuevo chat con el bot en uno u otro idioma dependiendo del caso.
@@ -459,7 +465,7 @@ and if the input is:
 \texttt{No solution!}
 \end{quote}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-y con ella, el bot entrega una solución que es aceptada (AC) por \jutge{} pero que no cumple algunos de los
+y con ella, el bot entrega una solución que es aceptada (\textit{AC}) por \jutge{} pero que no cumple algunos de los
 requisitos que se exigen en IB.
 Después de sucesivas interacciones con el bot en el que se le indica:
 \begin{enumerate}
@@ -508,6 +514,20 @@ En el caso de \textit{Primality}, en una sesión diferente con \ChatGPT{} se le 
 en ese caso, el bot entrega directamente la solución con la optimización del código, pero la solución no cumple
 con el estándar de Estilo en cuanto a la colocación de las llaves de apertura y cierre de bloques en C++.
 
+Particularmente interesante nos ha resultado el caso del problema
+\href{https://jutge.org/problems/P73501_en/statement}{\textit{Increasing Pairs}}, 
+consistente en calcular el número de pares de números consecutivos en una secuencia en los que el segundo
+número del par sea mayor que el primero.
+Suministrándole a \ChatGPT{} la breve descripción del problema en inglés tal cual figura en \jutge{}, el bot
+entrega una solución que, si bien pasa los tests públicos no consigue el veredicto \textit{AC} del juez porque
+falla en algún test privado.
+Hay que tener en cuenta que solo se sabe que el programa falla para algún test (secuencia de números) pero no
+se sabe más sobre ella.
+Informando al bot de esta circunstancia, éste responde con una segunda versión de la solución en la que ha
+solucionado algún caso particular en el que, efectivamente reconoce que la primera versión fallaría.
+Esta segunda versión adolece del mismo problema que la anterior: falla en algún test privado de \jutge{}, que
+por lo tanto no la acepta.
+Se le vuelve a indicar el fallo a \ChatGPT{} y finalmente produce una solución que \jutge{} valida.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Conclusiones}
