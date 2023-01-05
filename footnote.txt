@@ -1,1 +1,1 @@
-\footnote{Google C++ Style Guide\\ \href{https://google.github.io/styleguide/cppguide.html}{\scriptsize{\texttt{https://google.github.io/styleguide/cppguide.html}}}}.
+\footnote{Google C++ Style Guide\\ \href{}{\scriptsize{\texttt{}}}}.

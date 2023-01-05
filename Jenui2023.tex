@@ -150,18 +150,6 @@ fsande@ull.es
 \section*{Palabras clave}
 \noindent Programación IA ChatGPT GitHub Copilot Enseñanza Informática Evaluación
 
-\section{Pruebas}
-chatGPT \cite{Zhang:2020:chatgpt, Castelvecchi:2022:ACaA}
-
-AlphaCode \cite{Li:2022:CCG}
-
-
-En junio de 2021, GitHub lanzó Copilot \cite{Friedman:2021:IGC}, un "programador de pares de IA" que genera 
-código en diversos lenguajes a partir de cierto contexto como comentarios, nombres de funciones y código adyacente. 
-Copilot se basa en un modelo que se entrena con código abierto \cite{Chen:2021:ELL}, incluido "código público... 
-con patrones de codificación inseguros, lo que da lugar a la posibilidad de sintetizar código que contenga 
-estos patrones indeseables".
-
 \section{Introducción}
 La programación es una actividad transversal a cualquier rama de la informática y su
 importancia es compartida por cualquier especialización en esta titulación.
@@ -177,7 +165,10 @@ Se trata de la primera asignatura (y única en ese primer  cuatrimestre) de perf
 cursa el alumnado del título de Grado.
 
 El número de estudiantes que habitualmente cursa la asignatura está en torno a los 250. 
-Los contenidos de la asignatura pueden consultarse en la Guía Docente \cite{ULL:2022:GD} de la misma.
+Los contenidos de la asignatura pueden consultarse en la Guía Docente
+%\cite{ULL:2022:GD} 
+\footnote{Guía Docente de IB\\ \href{https://www.ull.es/apps/guias/guias/view_guide/34182/}{\scriptsize{\texttt{https://www.ull.es/apps/guias/guias/view\_guide/34182/}}}}.
+de la misma.
 Al margen de tres temas dedicados a una introducción a las Bases de Datos, Redes y Sistemas Operativos,
 el grueso de los contenidos (en torno a 12 de las 15 semanas del cuatrimestre) se dedican a introducir al
 alumnado en la materia de Programación, siendo C++ el lenguaje vehicular elegido para estudiar la materia.
@@ -211,7 +202,7 @@ sesiones prácticas.
 
 Cada semana al alumnado se le propone la realización de una práctica, consistente en un cierto número (cinco
 es un número habitual) de programas en C++ relacionados con algún tema estudiado.
-Esos programas tienen el propósito de servir de "entrenamiento" para que el alumnado afiance conocimientos a
+Esos programas tienen el propósito de servir de ``entrenamiento'' para que el alumnado afiance conocimientos a
 lo largo de la semana de la que disponen para realizar esos ejercicios.
 La sesión semanal de prácticas se destina a la evaluación de esos conocimientos a través de la realización de
 ejercicios de programación de complejidad similar a los que han sido propuestos con antelación.
@@ -262,7 +253,7 @@ cubren los siguientes tópicos:
 \end{itemize}
 
 Desde hace ya varios cursos en IB se viene usando la plataforma \jutge{} (juez) 
-\cite{URL::Jutge, Petit:Jutge:2018} para la evaluación de las prácticas.
+\cite{Petit:Jutge:2018} para la evaluación de las prácticas.
 Se trata de una plataforma que ha sido desarrollada en la Universidad Politécnica de Catalunya,
 diseñada tanto para profesorado como para alumnado.
 La plataforma aloja una gran cantidad de problemas (aproximadamente unos 2100) que cubren diversidad de
@@ -273,13 +264,14 @@ Como una de sus características, \jutge{} hace hincapié en el trabajo del alum
 resulta especialmente útil para reforzar el enfoque de aprender haciendo, en nuestro caso, programando.
 
 El modo de funcionamiento de \jutge{} requiere que cuando un estudiante resuelve un problema suba el código
-fuente de su solución a la plataforma.
-\jutge{} comprueba que la solución sea correcta pasando los correspondientes tests, de los cuales algunos son públicos
+fuente de su solución a la plataforma
+\footnote{\textit{Jutge.org} Home Page \href{https://jutge.org/}{\scriptsize{\texttt{https://jutge.org/}}}}
+donde se comprueba que sea correcta pasando los correspondientes tests, de los cuales algunos son públicos
 y otros privados.
 A una solución se le asigna el veredicto AC (\textit{Accepted}) cuando pasa todos los tests existentes para el problema.
 En su cuenta de \jutge{} cada estudiante dispone de un cuadro de mandos en el que se recopila el número de
-envíos que ha realizado, el de problemas aceptados y rechazados así como diversos gráficos que muestran su
-evolución en su trabajo con la plataforma.
+envíos que ha realizado, el de problemas aceptados y rechazados así como diversos gráficos que muestran la
+evolución en su trabajo con los problemas de la plataforma.
 
 Este modo de trabajo se aprovecha en las prácticas de IB: en cada sesión de evaluación se le pide al alumnado
 que resuevla un pequeño número de problemas (programas) de \jutge{}.
@@ -300,7 +292,7 @@ forma progresiva:
 \item Adecuado uso de espacios y signos de puntuación en el código
 \item Adhesión a las reglas de nombrado de identificadores de variables, funciones, clases, etc.
 \item Que todos los identificadores utilizados (salvo excepciones puntuales) sean significativos, evitando el
-  uso de "identificadores de un único carácter".
+  uso de ``identificadores de un único carácter''.
 \item Que todos los ficheros, funciones y métodos del código incluyan un breve prólogo con comentarios en
   formato Doxygen exponiendo la información más relevante sobre el elemento (función, clase, fichero, ...) en
     cuestión.
@@ -320,12 +312,43 @@ casi exclusivamente el trabajo que el estudiante realiza \textit{in situ} en la 
 ejercicios que durante la semana ha realizado en calidad de preparación para esa evaluación.
 
 
+En junio de 2021, GitHub lanzó \textit{Copilot} 
+%\cite{Friedman:2021:IGC}
+%\cite{Dakhel:2022:GCA},
+\cite{Nguyen:2022:AnEE},
+un ``programador de pares de IA'' que genera 
+código en diversos lenguajes a partir de cierto contexto como comentarios, nombres de funciones y código adyacente. 
+\textit{Copilot} se basa en un modelo que se entrena con código abierto \cite{Chen:2021:ELL}.
+
+En febrero de 2022 \textit{DeepMind} publicó \textit{Alphacode}, un sistema basado en Inteligencia Artificial
+(IA) que puede competir con un humano en la resolución de problemas sencillos de programación.
+Según resultados publicados en \textit{Sience} \cite{Li:2022:CCG}, \textit{Alphacode} gana en un 50\%
+de ocasiones a humanos en competiciones de resolución de problemas de programación.
+
+El pasado 30 de noviembre, \textit{OpenAI} lanzó \ChatGPT{}
+\cite{Zhang:2020:chatgpt, Castelvecchi:2022:ACaA}, un \textit{chatbot} interactivo de propósito general.
+Tanto \ChatGPT{} como \textit{AlphaCode} son ``grandes modelos lingüísticos'', es decir, sistemas basados en 
+redes neuronales que aprenden a realizar una tarea a partir de cantidades ingentes de texto generado por humanos. 
+De hecho, ambos sistemas utilizan prácticamente la misma arquitectura, siendo la principal diferencia entre
+ellos el conjunto de datos con que son entrenados, lo cual los dirige a diferente tipo de tareas.
+\ChatGPT{} está basado en el modelo GPT-3.5 que se ajusta con técnicas de aprendizaje supervisado y de
+refuerzo y su lanzamiento ha causado enorme interés tanto en la comunidad informática como en medios de
+comunicación generalistas \cite{Perez:2022:FBM} y atrayendo la atención de más de un millón de usuarios tan solo 
+cinco días depués de su lanzamiento.
 
 
 
-\section{Experiencias con \textit{Jutge.org} y ChatGPT}
+
+con patrones de codificación inseguros, lo que da lugar a la posibilidad de sintetizar código que contenga 
+estos patrones indeseables".
+
+
+\section{Experiencias con \ChatGPT{}}
 Todos los enunciados de problemas de \jutge{} están públicamente disponibles en la
-plataforma \cite{URL::prob} y cada uno de ellos cuenta con una descripción clara y precisa así como un
+plataforma 
+%\cite{URL::prob} 
+\footnote{Jutge Problems \href{https://jutge.org/problems/}{\scriptsize{\texttt{https://jutge.org/problems/}}}}
+y cada uno de ellos cuenta con una descripción clara y precisa así como un
 conjunto de tests públicos.
 
 Consideremos a modo de ejemplo el problema \textit{Primality} (P48713).
