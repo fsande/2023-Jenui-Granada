@@ -377,6 +377,9 @@ Para ello se ha iniciado un nuevo chat con el bot en uno u otro idioma dependien
 Si bien las soluciones que entrega el sistema no son exactamente las mismas, no se han hallado diferencias
 significativas en cuanto a la calidad tanto algorítmica como de estilo en las soluciones obtenidas.
 
+%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstinputlisting[float=*t, caption={Test de primalidad suministrado por \ChatGPT{}. Complejidad $O(\sqrt(n))$}, label=code:prime]{prime.cc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Para que el bot resuelva cualquiera de los problemas no ha resultado necesario suministrarle información
 adicional a la que figura en el propio enunciado de \jutge{}, habiéndosele entregado al bot la información
 correspondiente a la salida que el programa debiera entregar para los diferentes tests públicos de \jutge{}.
@@ -490,9 +493,6 @@ Esta solución no recibe el veredicto ``\textit{Accepted}'' en \jutge{} sino que
 como veredicto \textit{Execution Error (time limit exceeded)}.
 Ello se debe a que espera un algoritmo más eficiente para este cómputo.
 
-%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lstinputlisting[float=*t, caption={Test de primalidad suministrado por \ChatGPT{}. Complejidad $O(\sqrt(n))$}, label=code:prime]{prime.cc}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Esta solución es la que cabría esperar de un estudiante de primer curso de informática.
 Con frecuencia observamos estudiantes que ofrecen un algoritmo óptimo y ello es una pista para detectar que,
 posiblemente han hallado la solución en algún foro. 
@@ -534,9 +534,11 @@ Se le vuelve a indicar el fallo a \ChatGPT{} y finalmente produce una solución 
 Una relación no exhaustiva de preguntas que los experimentos expuestos anteriormente motivan y sobre las cuales 
 debemos reflexionar son las siguientes:
 \begin{itemize} 
-\item ¿Debemos ignorar la existencia de los asistentes basados en IA o debemos por el contrario, incorporarlos a
+\item ¿Suponen los avances en IA el final de la necesidad de la programación de ordenadores como hasta ahora
+  la hemos conocido?
+\item ¿Debemos ignorar la existencia de los asistentes basados en IA o se necesita por el contrario, incorporarlos a
     nuestra práctica docente?
-\item ¿Qué cambios debemos introducir en nuestra práctica docente de la enseñanza de la programación?
+\item ¿Qué cambios debemos introducir en las prácticas docentes de la enseñanza de la programación?
 \item ¿En qué momento del itinerario formativo en materia de programación debiera incorporarse el conocimiento
   y manejo de los asistentes de programación?
 \item ¿Son útiles los asistentes en los niveles iniciales del aprendizaje de la programación o por el
@@ -548,6 +550,16 @@ debemos reflexionar son las siguientes:
 No es objetivo de este trabajo ofrecer respuestas a estas y otras preguntas que cabe plantear, sino suscitar
 la discusión y el intercambio de ideas sobre el nuevo escenario que tenemos que afrontar en las aulas de forma
 inmediata.
+
+Si tal como muchos expertos vaticinan 
+\cite{Welsh:2023:TEoP}, 
+el desarrollo de grandes modelos de lenguajes supondrá en breve la desaparición de los programadores de
+ordenadores, los estudios de Informática habrán de modificarse para acomodarse a esta nueva realidad. 
+Del mismo modo que en la actualidad un desarrollador de software en general desconoce los detalles del
+hardware en el que se ejecutan sus programas, es posible que en el futuro un ingeniero de software no
+tenga que conocer los detalles de los programas que intervienen en un sistema complejo.
+Habrá en este caso que desplazar progresivamente la importancia de la programación hacia conocimientos 
+relacionados con ingeniería y arquitectura del software.
 
 Hurtar al alumnado el uso de los asistentes basados en IA en sus prácticas de programación, además de ser un
 esfuerzo vano, creemos que sería un enfoque profundamente erróneo.
