@@ -14,7 +14,8 @@ PLOT     = gnuplot
 SRC      = Jenui2023.tex
 MASSRC   = Jenui2023.tex
 DVI	     = $(SRC:.tex=.dvi)
-BIB	     = ../../bibtex/BIBLIOGRAFIA.bib
+#BIB	     = ../../bibtex/BIBLIOGRAFIA.bib
+BIB	     = ./Jenui2023.bib
 PS	     = $(SRC:.tex=.ps)
 SRCSIN   = $(SRC:.tex=)
 ### End User configurable options ###
