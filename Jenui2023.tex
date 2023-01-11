@@ -375,6 +375,11 @@ diversos campos
 La siguiente sección aborda el impacto de \ChatGPT{} en la realización de prácticas de IB.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Experiencias con \ChatGPT{}}
+Por limitaciones de espacio no podemos reseñar en esta sección todos los experimentos realizados con
+\ChatGPT{}, de modo que nos limitaremos a describir solamente los que consideramos más relevantes o de interés
+para comprender el modo de funcionamiento del bot y sus capacidades para resolver algunos ejercicios
+concretos.
+
 Todos los enunciados de problemas de \jutge{} están públicamente disponibles en la
 plataforma 
 \footnote{Jutge Problems \href{https://jutge.org/problems/}{\scriptsize{\texttt{https://jutge.org/problems/}}}}
@@ -436,55 +441,24 @@ lo cual produce que la primera versión que el bot entrega para la solución de 
 
 En ese mismo problema se muestra a continuación la descripción que se entregó inicialmente
 a \ChatGPT{}, copiada casi literalmente de \jutge{}:
-%%%%%%%%%%%%%%%%%%%%%%%% Cita %%%%%%%%%%%%%%%%%%%%%%%% 
-%\begin{center}
-%    \begin{minipage}{\linewidth}
-%        %\vspace{5pt}%margen superior de minipage
-%        {\small
-%        }
-%        %\vspace{5pt}%margen inferior de la minipage
-%    \end{minipage}
-%\end{center}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%% Quote %%%%%%%%%%%%%%%%%%%%%%%% 
 \begin{quote}
-A famous theorem of the mathematician Pierre de Fermat, proved after more than 300 years, 
-states that, for any natural number $n \geq 3$, there is no natural solution (except for x=0 or y=0) to the equation
- $x^n + y^n = z^n$
-
-For $n=2$, by contrast, there are infinite non-trivial solutions. 
-For instance, $3^2 + 4^2 = 5^2$, $5^2 + 12^2 = 13^2$, $6^2 + 8^2 = 10^2$, ...
-
-Write a C++ program that, given four natural numbers a, b, c, d with $a \leq b$ and $c \leq d$, prints a natural solution to the equation
-  $x^2 + y^2 = z^2$
-such that $a \leq x \leq b$ and $c \leq y \leq d$.
-
-The program input consists of four natural numbers a, b, c, d such that $a<=b$ and $c<=d$.
-
-The program output should be a line with a natural solution to the equation
-  $x^2 + y^2 = z^2$
-that fulfills $a \leq x \leq b$ and $c \leq y \leq d$. 
-
-If there is more than one solution, print the one with the smallest x. 
-
-If there is a tie in x, print the solution with the smallest y. 
-
-If there are no solutions, print ``No solution!''.
-
-For example, if the input is:
-\texttt{2 5 4 13}
-
-The output should be
-
-\texttt{3} \texttt{\^} \texttt{2 + 4} \texttt{\^} \texttt{2 = 5} \texttt{\^} \texttt{2}
-
-and if the input is:
-\texttt{1 1 1 1}
-
-     The output should be 
-\texttt{No solution!}
+   \small{
+     \textit{
+   \input{problem-description.tex}
+     }
+   }
 \end{quote}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%% Cita %%%%%%%%%%%%%%%%%%%%%%%% 
+%\begin{center}
+%  \begin{minipage}{\linewidth}
+%    {\small
+%    \input{problem-description.tex}
+%    }
+%  \end{minipage}
+%\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 y con ella, el bot entrega una solución que es aceptada (\textit{AC}) por \jutge{} pero que no cumple algunos de los
 requisitos que se exigen en IB.
 Después de sucesivas interacciones con el bot en el que se le indica:
