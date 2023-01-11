@@ -1,0 +1,13 @@
+int main() {
+    int num_cases;
+    while (std::cin >> num_cases && num_cases != 0) {
+        int result_lcm = 1;
+        for (int i = 0; i < num_cases; ++i) {
+            int current_num;
+            std::cin >> current_num;
+            result_lcm = (result_lcm * current_num) / LeastCommonMultiple(result_lcm, current_num);
+        }
+        std::cout << result_lcm << std::endl;
+    }
+    return 0;
+}
