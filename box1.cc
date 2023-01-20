@@ -17,7 +17,6 @@ void Box::set_weight(double weight) { weight_ = weight; }
 // Other methods
 double Box::Volume() const { return length_ * width_ * height_; }
 double Box::SurfaceArea() const { return 2 * (length_ * width_ + width_ * height_ + height_ * length_); }
-
 std::ostream& operator<<(std::ostream& os, const Box& box) {
   os << "Box(" << box.length() << "x" << box.width() << "x" << box.height()
      << ", " << box.weight() << ")";

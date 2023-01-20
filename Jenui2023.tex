@@ -151,10 +151,9 @@ anonimo@xxxxxx.es
 
 \begin{abstract}
 \noindent En los últimos años, las capacidades de los asistentes de programación basados en Inteligencia 
-Artificial se han incrementado de forma muy notable, habiendo trascendido el ámbito de las Ciencias de 
-la Computación.
-El impacto que estos sistemas tienen en el ámbito de la educación y específicamente en la enseñanza de la
-programación de ordenadores es particularmente significativo porque se trata del campo en el que
+Artificial se han incrementado de forma muy notable, habiendo trascendido el ámbito de las Ciencias de la Computación.
+El impacto que estos sistemas tienen en el campo de la educación y específicamente en la enseñanza de la
+programación de ordenadores es particularmente significativo porque se trata del dominio en el que
 posiblemente obtienen sus mejores resultados.
 De estos avances se han hecho eco medios de comunicación generalistas suscitando un debate muy interesante y
 pertinente con una pregunta que atraviesa toda la discusión: ¿suponen estos asistentes el fin de la
@@ -164,7 +163,7 @@ programación en una asignatura de primer curso del grado en Ingeniería Inform�
 Se relacionan algunos experimentos realizados con \ChatGPT{} aplicados a los ejercicios prácticos de
 programación que se utilizan como prácticas de laboratorio en la asignatura.
 El trabajo finaliza con la presentación de algunas conclusiones que se derivan de los experimentos
-realizados así como el planteamiento de diversas cuestiones que siendo de incuestionable actualidad carecen
+realizados así como con el planteamiento de diversas cuestiones que siendo de incuestionable actualidad carecen
 de respuestas concluyenes en muchos casos.
 \end{abstract}
 
@@ -186,41 +185,40 @@ The work concludes with the presentation of some conclusions derived from the ex
 as with the posing of several questions that, although undoubtedly topical, lack conclusive answers in many cases.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section*{Palabras clave}
-\noindent Programación Asistentes IA ChatGPT Enseñanza Informática Evaluación
+\noindent Programación Inteligencia Artificial Asistentes ChatGPT Enseñanza Aprendizaje
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Introducción}
-La programación es una actividad transversal a cualquier rama de la informática y su
+La programación de ordenadores es una actividad transversal a cualquier rama de la informática y su
 importancia es compartida por cualquier especialización en esta titulación.
 \textit{Informática} 
 %\textit{Informática Básica} 
-(ASIG, de ahora en adelante) es la primera asignatura en la que el alumnado toma 
-contacto con esta materia y en la que ha de aprender los fundamentos de la misma.
-Los conceptos objeto de estudio son comunes, con pequeñas variaciones, a cualquier lenguaje de programación
-orientado a objetos, que es el paradigma objeto de estudio en ASIG.
-
-ASIG es una asignatura de 6 créditos que se imparte en el primer cuatrimestre 
+(ASIG, de ahora en adelante) 
+es una asignatura de 6 créditos que se imparte en el primer cuatrimestre 
 del primer curso del Grado en Ingeniería Informática en la Escuela Anónima
 %Superior de Ingeniería y Tecnología de la 
 de la Universidad de Anónima.
 %La Laguna.
 Se trata de la primera asignatura (y única en ese primer cuatrimestre) de perfil eminentemente informático que
-cursa el alumnado del título de Grado.
+cursa el alumnado de la titulación y es en ASIG donde los estudiantes toman
+contacto con la programación y en la que han de aprender los fundamentos de esta materia.
+Los conceptos objeto de estudio son comunes, con pequeñas variaciones, a cualquier lenguaje de programación
+orientado a objetos, que es el paradigma estudiado en ASIG.
 El número de estudiantes de primer curso está en torno a los 250 y los contenidos de la asignatura pueden 
 consultarse en la Guía Docente
 %\cite{ULL:2022:GD} 
 \footnote{Guía Docente de ASIG\\ \href{https://www.anonimo.es/}{\scriptsize{\texttt{https://www.anonimo.es/}}}}.
 %\footnote{Guía Docente de ASIG\\ \href{https://www.ull.es/apps/guias/guias/view_guide/34182/}{\scriptsize{\texttt{https://www.ull.es/apps/guias/guias/view\_guide/34182/}}}}.
 de la misma.
-Al margen de tres temas dedicados a una introducción a las Bases de Datos, Redes y Sistemas Operativos,
+Al margen de tres temas dedicados a una introducción a los Sistemas Operativos, Redes y Bases de Datos,
 el grueso de los contenidos (en torno a 12 de las 15 semanas del cuatrimestre) se dedican a introducir al
-alumnado en la materia de Programación, siendo C++ el lenguaje vehicular utilizado para estudiarla.
+alumnado en la programación, siendo C++ el lenguaje vehicular utilizado para estudiarla.
 Se trata de una asignatura con una importante proporción de contenidos prácticos en la que cada estudiante
 recibe 4 horas presenciales de clase a la semana distribuídas del siguiente modo:
 \begin{itemize}
   \item 2 horas dedicadas al estudio de contenidos teóricos
-  \item 1 hora dedicada a la resolución de Problemas
-  \item 1 horas de Prácticas
+  \item 1 hora dedicada a la resolución de problemas
+  \item 1 hora de prácticas
 \end{itemize}
 Se describe a continuación el tipo de actividades que se desarrolla en cada una de este tipo de sesiones.
 
@@ -231,13 +229,13 @@ Para cumplir con el requisito del número de créditos que cada estudiante ha de
 titulación, la mayor parte del material que se utiliza en la asignatura está en ese idioma y se incentiva 
 también el uso del mismo en todas las actividades que se desarrollan, particularmente en todo lo relacionado 
 con la materia de programación.
-Junto a las transparencias, el alumnado dispone de una serie de pequeños programas que sirven de ilustración a
-los contenidos que se estudian en clase. 
-Se recomienda al alumnado estudiar esos programas para afianzar sus conocimientos de cada tema.
+Junto a las transparencias, el alumnado dispone de una serie de pequeños programas, disponibles a través de un
+repositorio público, que sirven de ilustración a los conceptos que se estudian en las sesiones teóricas. 
+Se recomienda al alumnado estudiar esos programas para afianzar los contenidos expuestos.
 
 En las sesiones de problemas el profesorado utiliza un terminal cuya pantalla se proyecta a toda la clase para
-resolver algunos problemas seleccionados, resolviendo al mismo tiempo las dudas que puedan surgir en esa
-resolución. 
+solucionar de forma práctica algunos problemas seleccionados, resolviendo al mismo tiempo las dudas que puedan 
+surgir en esa resolución. 
 
 La Guía docente establece que por cada hora de trabajo presencial, cada estudiante debería dedicar en 
 promedio 1,5 horas de trabajo autónomo, de modo que se espera unas 6 horas de trabajo autónomo semanal por 
@@ -251,13 +249,13 @@ Cada semana al alumnado se le propone la realización de una práctica, consiste
 es un número habitual) de programas en C++ relacionados con algún tema estudiado.
 Esos programas tienen el propósito de servir de ``entrenamiento'' para que el alumnado afiance conocimientos a
 lo largo de la semana de la que disponen para realizar esos ejercicios.
-La sesión semanal de prácticas se destina a la evaluación de esos conocimientos a través de la realización de
-ejercicios de programación de complejidad similar a los que han sido propuestos con antelación.
-En las últimas prácticas de la asignatura los ejercicios de evaluación suelen ser simples modificaciones de 
-los que se han propuesto para realizar con antelación.
+La sesión semanal de prácticas se destina a la evaluación de esos conocimientos a través de la realización en
+el laboratorio de prácticas de ejercicios de programación de complejidad similar a los que han sido propuestos 
+con antelación.
+En las últimas prácticas de la asignatura los ejercicios de evaluación suelen ser modificaciones o
+ampliaciones de los que se han propuesto para realizar con antelación.
 
 % 10 minutos para cuestionarios
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Motivación}
 Más allá del ineludible aprendizaje de los conceptos básicos de la materia, 
@@ -271,7 +269,7 @@ acreditar que se es una buena conductora requiere muchas horas de práctica y ex
 infrecuentes.
 Del mismo modo cualquier informático dirá que sabe programar pero sus habilidades en esta materia dependerán
 muy directamente de las horas de práctica que haya dedicado a la misma.
-Siguiendo esta idea, recomendamos encarecidamente al alumnado de ASIG que realice cuantos ejercicios prácticos
+Siguiendo esta idea, se recomienda al alumnado de ASIG que realice cuantos ejercicios prácticos
 sean capaces para, de forma progresiva, ir incrementando sus capacidades como programadoras.
 
 Las prácticas de la asignatura se convierten pues en una oportunidad para que el alumnado mejore destrezas y
@@ -281,10 +279,10 @@ titulación.
 La masificación de los grupos de laboratorio de prácticas, con grupos de hasta 20 estudiantes por sesión es
 la mayor dificultad para la evaluación de esos trabajos prácticos.
 Esta situación es compartida por muchas otras asignaturas de la titulación que tienen una significativa
-componente práctica en sus contenidos, de modo que casi todas las cuestiones que en este trabajo queremos
-plantear son comunes a muchas asignaturas e incluso a otras titulaciones.
+componente práctica en sus contenidos, de modo que algunas cuestiones que en este trabajo se plantean
+son comunes a muchas asignaturas e incluso a otras titulaciones.
 
-Una vez realizadas tres prácticas iniciales en las que el alumnado se familiariza con el Sistema Operativo
+Una vez realizadas tres prácticas iniciales en las que el alumnado se familiariza con el sistema operativo
 Linux, con el entorno de máquina virtual en el que desarrollará sus programas y con el editor \texttt{vim}, 
 que es el que se utiliza inicialmente, todas las prácticas restantes abordan contenidos de programación que
 cubren los siguientes tópicos:
@@ -300,15 +298,15 @@ cubren los siguientes tópicos:
   \item Introducción a la Programación Orientada a Objetos
 \end{itemize}
 
-Desde hace ya varios cursos en ASIG se viene usando la plataforma \jutge{} (juez) 
+Desde hace ya varios cursos en ASIG se viene usando la plataforma \jutge{} (\textit{juez}) 
 \cite{Petit:Jutge:2018} para la evaluación de las prácticas.
-Se trata de una plataforma que ha sido desarrollada en la Universidad Politécnica de Catalunya,
-diseñada tanto para profesorado como para alumnado.
-La plataforma aloja una gran cantidad de problemas (aproximadamente unos 2100) que cubren diversidad de
+\jutge{} ha sido desarrollado en la Universidad Politécnica de Catalunya, orientado tanto al profesorado 
+como al alumnado.
+La plataforma aloja una gran cantidad de problemas (aproximadamente unos 2100) que cubren diversos
 tópicos incluyendo entre ellos los fundamentos de la programación.
 Los problemas están perfectamente descritos y contienen un conjunto de tests que el código de usuario ha de
 verificar.
-Como una de sus características, \jutge{} hace hincapié en el trabajo del alumno, por lo que 
+Como una de sus características, \jutge{} hace hincapié en el trabajo del alumnado, por lo que 
 resulta especialmente útil para reforzar el enfoque de aprender haciendo, en nuestro caso, programando.
 
 El modo de funcionamiento de \jutge{} requiere que cuando un estudiante resuelve un problema suba el código
@@ -325,37 +323,37 @@ Este modo de trabajo se aprovecha en las prácticas de ASIG: en cada sesión de 
 que resuevla un pequeño número de problemas (programas) de \jutge{}.
 La evaluación de la sesión depende no solo del número de problemas resuelto (no suelen ser más de dos o tres)
 sino de la calidad del código desarrollado.
-\jutge{} comprueba exclusivamente que el código evaluado funcione correctamente, mientras que en ASIG se
-enfatizan otros aspectos del código que nos parecen tanto o más relevantes que el propio funcionamiento del
-mismo, que obviamente es un requisito ineludible.
-Muchos de los requisitos que se exigen a los programas de prácticas de ASIG se definen en la Guía de estilo de 
-referencia que se sigue en la asignatura 
+\jutge{} comprueba exclusivamente (mediante la comprobación de los correspondientes tests) que el programa evaluado 
+funcione correctamente, mientras que en ASIG se enfatizan otros aspectos del código que nos parecen tanto o más 
+relevantes que el propio funcionamiento del mismo, que obviamente es una condición ineludible.
+Algunos de los requisitos que se exigen a los programas de prácticas de ASIG se definen en la Guía de estilo de 
+referencia que se utiliza en la asignatura 
 %\cite{Google::GSG}
 \footnote{Google C++ Style Guide\\ \href{https://google.github.io/styleguide/cppguide.html}{\scriptsize{\texttt{https://google.github.io/styleguide/cppguide.html}}}}.
 
-Se relacionan a continuación algunos de los requisitos exigidos, que obviamente se introducen al alumnado de
-forma progresiva:
+Se relacionan a continuación algunos de los requisitos exigidos:
 \begin{itemize}
 \item Correcto sangrado del código
 \item Adecuado uso de espacios y signos de puntuación en el código
 \item Adhesión a las reglas de nombrado de identificadores de variables, funciones, clases, etc.
-\item Que todos los identificadores utilizados (salvo excepciones puntuales) sean significativos, evitando el
-  uso de ``identificadores de un único carácter''.
+\item Todos los identificadores utilizados (salvo excepciones puntuales) han de ser significativos, evitando el
+      uso de ``identificadores de un único carácter''.
 \item Los programas deben escribirse de forma modular incorporando diversas funciones en la solución.
-\item Que todos los ficheros, funciones y métodos del código incluyan un breve prólogo con comentarios en
-  formato Doxygen exponiendo la información más relevante sobre el elemento (función, clase, fichero, ...) en
-    cuestión.
-\item Que la compilación de todos los programas se automatice mediante el uso de herramientas como
-  \texttt{make} o \texttt{cmake}.
-\item Que los parámetros de tipos estructurados que se pasen a una función/método estén sean referencias
-  constantes.
-\item Que los métodos definidos en las clases de los programas sean \textit{const friendly}.
+\item Todos los ficheros, funciones y métodos del código han de incluir un breve prólogo con comentarios en
+      formato \textit{Doxygen} exponiendo la información más relevante sobre el elemento (función, clase, fichero, ...) en
+      cuestión.
+\item La compilación de todos los programas ha de automatizarse mediante el uso de herramientas como \texttt{make} o \texttt{cmake}.
+\item Se enfatiza que los parámetros de tipos estructurados que se pasen a una función/método se pasen como referencias,
+      cualificadas como constantes, si procede.
+\item Se promueve que los métodos definidos en las clases sean \textit{const friendly}.
 \end{itemize}
+Estos requisitos se introducen al alumnado de forma progresiva y son parte fundamental de la evaluación de cada programa, 
+una vez satisfecho el requisito de un correcto funcionamiento.
 
 Un problema recurrente en todas las asignaturas que requieren la evaluación de prácticas de programación es la
 infracción por parte de algunos estudiantes de las reglas de código de conducta que establecen que los
 trabajos presentados a evaluación han de ser programas originales realizados por sus autores.
-Ante la dificultad de acreditar fehacientemente este requisito en una sesión de evaluación con un elevado
+Ante la dificultad de acreditar fehacientemente esta condición en una sesión de evaluación con un elevado
 número de estudiantes en el aula de prácticas y con un tiempo tan limitado se ha optado por valorar
 casi exclusivamente el trabajo que el estudiante realiza \textit{in situ} en la sesión de evaluación, y no los
 ejercicios que durante la semana ha realizado en calidad de preparación para esa evaluación.
@@ -363,8 +361,7 @@ Se permite al alumnado en la sesión de evaluación el uso de recursos disponibl
 foros, etc.), puesto que entendemos que el alumnado ha de ser evaluado en condiciones de trabajo similares a 
 las que tendrá en un entorno profesional.
 
-Es en este punto donde queremos introducir en la discusión los asistentes de programación basados en
-Inteligencia Artificial (IA).
+Es en este punto donde queremos pasar a considerar los asistentes de programación basados en Inteligencia Artificial (IA).
 En junio de 2021, GitHub lanzó \textit{Copilot} 
 %\cite{Friedman:2021:IGC}
 %\cite{Dakhel:2022:GCA},
@@ -373,7 +370,7 @@ un ``programador de pares de IA'' capaz de generar
 código en diversos lenguajes a partir de cierto contexto como comentarios, nombres de funciones y código adyacente. 
 \textit{Copilot} se basa en un modelo que se entrena con código abierto \cite{Chen:2021:ELL}.
 
-En febrero de 2022 \textit{DeepMind} publicó \textit{Alphacode}, un sistema basado en IA
+En febrero de 2022 \textit{DeepMind} publicó \textit{Alphacode}, otro sistema basado en IA
 generativa que puede competir con un humano en la resolución de problemas sencillos de programación.
 Según resultados publicados en \textit{Sience} \cite{Li:2022:CCG}, \textit{Alphacode} gana en un 50\%
 de ocasiones a humanos en competiciones de resolución de problemas de programación.
@@ -390,7 +387,7 @@ redes neuronales que aprenden a realizar una tarea a partir de ingentes cantidad
 De hecho, ambos sistemas utilizan prácticamente la misma arquitectura, siendo la principal diferencia entre
 ellos el conjunto de datos con que son entrenados, lo cual los dirige a diferente tipo de tareas.
 Posiblemente debido a que se trata de un asistente de propósito general, capaz de discutir sobre materias tan dispares 
-como Derecho, Filosofía o Programación de ordenadores, ha sido el lanzamiento de \ChatGPT{} el que ha suscitado un mayor
+como derecho, filosofía o programación de ordenadores, ha sido el lanzamiento de \ChatGPT{} el que ha suscitado un mayor
 interés, no solo en la comunidad informática sino también en medios de comunicación de caracter generalista
 \cite{Perez:2022:FBM} 
 atrayendo la atención de más de un millón de usuarios apenas cinco días después de su lanzamiento.
@@ -404,17 +401,15 @@ diversos campos
 
 %con patrones de codificación inseguros, lo que da lugar a la posibilidad de sintetizar código que contenga estos patrones indeseables".
 
-En la siguiente sección presentamos algunas experiencias significativas realizadas con \ChatGPT{} en el ámbito
-de la realización de prácticas de ASIG.
+En la siguiente sección se presentan algunas experiencias significativas realizadas con \ChatGPT{} en el ámbito
+de los ejercicios de programación de las prácticas de ASIG.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Experiencias con \ChatGPT{}}
-Aunque el estudio que se ha realizado no es exhaustivo, hemos utilizado \ChatGPT{} para tratar de resolver
+Aunque el estudio que se ha realizado no es exhaustivo, se ha utilizado \ChatGPT{} para tratar de resolver
 diversos problemas de \jutge{}
 \footnote{
-Todos los programas que se mencionan en este trabajo y que han sido sometidos a la evaluación de \jutge{} se
-han alojado convenientemente documentados en un repositorio privado.
-Cualquier persona interesada en acceder a esos programas puede obtener acceso solicitándolo por correo
-electrónico al autor 
+Todos los programas que se mencionan en este trabajo se han alojado convenientemente documentados en un repositorio privado.
+Cualquier persona interesada en acceder a esos programas puede solicitarlo por correo electrónico al autor 
 (\texttt{anonimo@anonimo.es})
 %(\texttt{fsande@ull.es})
 }. 
@@ -426,9 +421,9 @@ Todos los enunciados de problemas de \jutge{} están públicamente disponibles e
 plataforma 
 \footnote{Jutge Problems \href{https://jutge.org/problems/}{\scriptsize{\texttt{https://jutge.org/problems/}}}}
 y cada uno de ellos cuenta con una especificación clara y precisa así como de un conjunto de tests públicos.
-Se ha intentado describir los problemas tanto en inglés (idioma en que están descritos la mayoría de
+Se han descrito los problemas a \ChatGPT{} tanto en inglés (idioma en que están descritos la mayoría de
 los problemas de \jutge{}) como en español.
-Para ello se ha iniciado un nuevo chat con el bot en uno u otro idioma dependiendo del caso.
+Para ello se ha iniciado una nueva sesión con el bot en uno u otro idioma dependiendo del caso.
 Si bien las soluciones que entrega el sistema no son exactamente las mismas, no se han hallado diferencias
 significativas en cuanto a la calidad tanto algorítmica como de estilo en las soluciones obtenidas.
 %%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -436,31 +431,11 @@ significativas en cuanto a la calidad tanto algorítmica como de estilo en las s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Para que el bot resuelva cualquiera de los problemas no ha resultado necesario suministrarle información
 adicional a la que figura en el propio enunciado de \jutge{}, habiéndosele entregado al bot la información
-correspondiente a la salida que el programa debiera entregar para los diferentes tests públicos de \jutge{}.
+correspondiente a la salida que el programa debiera entregar para los diferentes tests públicos.
 
 Por otra parte, si no se le especifica explícitamente, las soluciones que produce \ChatGPT{} generalmente no
 siguen reglas de estilo o documentación específicas, pero si en el enunciado del problema se incluyen
 estas reglas como requisito, la solución que entrega el bot se ajusta a las mismas.
-%En general, para todos los problemas analizados se han indicado al bot instrucciones (en el idioma de la
-%sesión) del tipo:
-%%%%%%%%%%%%%%%%%%%%%%%% Cita %%%%%%%%%%%%%%%%%%%%%%%% 
-%\begin{center}
-%    \begin{minipage}{\linewidth}
-%        %\vspace{5pt}%margen superior de minipage
-%        {\small
-%        \begin{itemize}
-%          \item Base su solución en una función que será invocada desde \textit{main()}.
-%          \item El programa debe incluir comentarios de cabecera en formato Doxygen.
-%          \item Haga que el código cumpla con los requisitos de la Guía de Estilo de Google para C++.
-%          \item Haga que el programa utilice identificadores significativos para todas las variables.
-%          \item No utilice identificadores de un único carácter en el programa.
-%          \item No incluya en el programa comentarios innecesarios.
-%        \end{itemize}
-%        }
-%        %\vspace{5pt}%margen inferior de la minipage
-%    \end{minipage}
-%\end{center}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 Es más, al tratarse de un bot interactivo, si la solución que entrega el sistema no es satisfactoria en algún
 sentido, se le puede pedir que refactorice el código para cumplir con algún requisito y en ese caso en general
 el sistema adecúa su respuesta para cumplir con la solicitud.
@@ -524,9 +499,9 @@ inexperto.
 Con frecuencia encontramos estudiantes que, para este problema ofrecen un algoritmo óptimo y ello es una pista 
 para detectar que, posiblemente han hallado la solución en algún foro. 
 Al preguntar la razón por la que no recorre todo el rango de búsqueda cabría esperar una
-respuesta en la que el estudiante indique que ha investigado el problema y aprendido sobre el mismo, pero es
+respuesta en la que el programador indique que ha investigado el problema y aprendido sobre el mismo, pero es
 frecuente una respuesta del tipo ``\textit{lo he probado y he observado que funcionaba}'', que obviamente no se
-considera adecuada para la evaluación de un ejercicio práctico.
+considera adecuada en la evaluación de un ejercicio práctico.
 
 En el propio enunciado del problema se indica una pista para un algoritmo de menor complejidad.
 Si a \ChatGPT{} se le indica:
@@ -537,6 +512,9 @@ establece la Guía de Estilo de Google, pero si se le indica esa circunstancia, 
 de la función. 
 El código completo de la función es el que se muestra en el Listado \ref{code:prime}.
 
+%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstinputlisting[caption={Declaración preliminar de la clase \textit{Box}}, label=code:boxh]{box1.h}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 En el caso de \textit{Primality}, en una sesión diferente con \ChatGPT{} se le entregó el enunciado en español y
 en ese caso, el bot devolvió directamente la solución con la optimización del código, pero la solución no cumplía
 con el estándar de Estilo en cuanto a la colocación de las llaves de apertura y cierre de bloques en C++.
@@ -551,11 +529,14 @@ falla en algún test privado.
 Hay que tener en cuenta que solo se sabe que el programa falla para algún test (secuencia de números) pero no
 se sabe más sobre ella.
 Informando al bot de esta circunstancia, éste responde con una segunda versión de la solución en la que ha
-solucionado algún caso particular en el que, efectivamente reconoce que la primera versión fallaría.
+resuelto algún caso particular en el que, efectivamente admite que su primera versión fallaría.
 Esta segunda versión adolece del mismo problema que la anterior: falla en algún test privado de \jutge{}, que
 por lo tanto no la acepta.
 Se le vuelve a indicar el fallo a \ChatGPT{} y finalmente produce una solución que \jutge{} valida.
 
+%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstinputlisting[float=*t, caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Este modo de trabajo, interactuando con el bot para refinar la solución en sucesivas iteraciones fue el que se
 utilizó para el experimento que se realizó con un problema consistente en la implementación en C++ de una
 clase para representar ``cajas''. 
@@ -616,23 +597,15 @@ A cada una de las peticiones anteriores el bot responde entregando sucesivos fra
 explicaciones.
 Una vez corregido el último error señalado, el programa completo con los tres ficheros puede compilarse con
 \texttt{make} obteniéndose un código ejecutable que funciona de acuerdo a la especificación.
-El listado \ref{} muestra el contenido del fichero \texttt{box.cc} en el que se han eliminado los comentarios
-en formato \textit{Doxigen} que el bot incluía antes de cada una de las funciones.
-%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\lstinputlisting[float=*t, caption={Declaración de la clase \textit{Box}}, label=code:boxh]{2.h}
-\lstinputlisting[caption={Declaración de la clase \textit{Box}}, label=code:boxh]{box1.h}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lstinputlisting[float=*t, caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+El listado \ref{code:boxc} muestra el contenido del fichero \texttt{box.cc} en el que se han eliminado los comentarios
+en formato \textit{Doxygen} que el bot incluyó antes de cada una de las funciones.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Conclusiones}
-Como muestran los experimentos reflejados en la sección anterior, la capacidad de resolver problemas sencillos
+Como muestran los experimentos reflejados en la sección anterior, la capacidad de \ChatGPT{} para resolver problemas sencillos
 de programación como los que se utilizan en los primeros cursos del Grado en Ingeniería Informática es
 sobresaliente.
-Podemos afirmar que \ChatGPT{} es capaz de resolver correctamente la mayoría de los problemas especificados en
+Podemos afirmar que el asistente es capaz de resolver correctamente la mayoría de los problemas especificados en
 la plataforma \jutge{}, cumpliendo no solo con el requisito de un correcto funcionamiento sino también con los
 de buenas prácticas y estilo de programación que se exigen en ASIG.
 
@@ -681,8 +654,9 @@ asistentes que en el futuro tendrán que conocer y utilizar.
 En lugar de prohibir a los estudiantes el uso de estos sistemas, creemos que lo que ha de hacerse es ayudar
 al profesorado y al alumnado a incorporar estas nuevas herramientas como elementos de apoyo al aprendizaje.
 
-La situación que ahora enfrentamos no es nueva: la aparición de Wikipedia (nos referimos en este caso 
-a ámbitos diferentes del de la programación de ordenadores) o foros de discusión como
+La situación que ahora enfrentamos no es nueva: la aparición de Wikipedia 
+%(nos referimos en este caso a ámbitos diferentes del de la programación de ordenadores) 
+o foros de discusión como
 \textit{StackOverflow} en los que se ofrecen soluciones a multitud de problemas de diferente tipo supuso en su
 momento una ampliación del conjunto de herramientas disponibles a la hora de programar y de aprender a
 programar.
@@ -697,7 +671,7 @@ Si bien la llegada de los asistentes basados en IA a las aulas no implicará que
 necesario, sí es cierto que estas tecnologías van a impactar en la praxis docente y hemos de adaptar nuestras
 metodologías para incorporar estos cambios.
 Integrar estos asistentes en las metodologías docentes e instruir a profesorado y alumnado acerca de su 
-funcionamiento y de sus posibles usos será clave para lograr una utilización correcta de estos programas.
+funcionamiento y de sus posibles usos será clave para lograr una utilización correcta de estos sistemas.
 \balance{}
 \bibliographystyle{jenui}
 %\nocite{*}
