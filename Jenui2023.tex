@@ -192,7 +192,7 @@ as with the posing of several questions that, although undoubtedly topical, lack
 \section{Introducción}
 La programación es una actividad transversal a cualquier rama de la informática y su
 importancia es compartida por cualquier especialización en esta titulación.
-\textit{Informática XXX} 
+\textit{Informática} 
 %\textit{Informática Básica} 
 (ASIG, de ahora en adelante) es la primera asignatura en la que el alumnado toma 
 contacto con esta materia y en la que ha de aprender los fundamentos de la misma.
@@ -200,9 +200,9 @@ Los conceptos objeto de estudio son comunes, con pequeñas variaciones, a cualqu
 orientado a objetos, que es el paradigma objeto de estudio en ASIG.
 
 ASIG es una asignatura de 6 créditos que se imparte en el primer cuatrimestre 
-del primer curso del Grado en Ingeniería Informática en la Escuela XXX
+del primer curso del Grado en Ingeniería Informática en la Escuela Anónima
 %Superior de Ingeniería y Tecnología de la 
-Universidad de XXX.
+de la Universidad de Anónima.
 %La Laguna.
 Se trata de la primera asignatura (y única en ese primer cuatrimestre) de perfil eminentemente informático que
 cursa el alumnado del título de Grado.
@@ -537,11 +537,11 @@ establece la Guía de Estilo de Google, pero si se le indica esa circunstancia, 
 de la función. 
 El código completo de la función es el que se muestra en el Listado \ref{code:prime}.
 
-En el caso de \textit{Primality}, en una sesión diferente con \ChatGPT{} se le ha entregado el enunciado en español y
-en ese caso, el bot entrega directamente la solución con la optimización del código, pero la solución no cumple
+En el caso de \textit{Primality}, en una sesión diferente con \ChatGPT{} se le entregó el enunciado en español y
+en ese caso, el bot devolvió directamente la solución con la optimización del código, pero la solución no cumplía
 con el estándar de Estilo en cuanto a la colocación de las llaves de apertura y cierre de bloques en C++.
 
-Particularmente interesante nos ha resultado el caso del problema
+Particularmente interesante nos ha resultado el caso del experimento realizado con el problema
 \href{https://jutge.org/problems/P73501_en/statement}{\textit{Increasing Pairs}}, 
 consistente en calcular el número de pares de números consecutivos en una secuencia en los que el segundo
 número del par sea mayor que el primero.
@@ -556,8 +556,91 @@ Esta segunda versión adolece del mismo problema que la anterior: falla en algú
 por lo tanto no la acepta.
 Se le vuelve a indicar el fallo a \ChatGPT{} y finalmente produce una solución que \jutge{} valida.
 
+Este modo de trabajo, interactuando con el bot para refinar la solución en sucesivas iteraciones fue el que se
+utilizó para el experimento que se realizó con un problema consistente en la implementación en C++ de una
+clase para representar ``cajas''. 
+Se trata de un problema de programación que ha figurado como ejercicio de evaluación, en este caso
+en exámenes escritos, del alumnado de ASIG.
+Se exponen a continuación en español las sucesivas peticiones que se realizaron a \ChatGPT{} en inglés:
+\begin{enumerate}
+  \item A continuación (véase el Listado \ref{code:boxh}) se muestra la definición parcial en C++ de una clase \textit{Box}
+    que representa una caja.
+  \item Queremos que el código siga las recomendaciones de la Guía de Estilo de Google para C++.
+        Completa la definición de la clase \textit{Box} incluyendo los constructores y métodos que consideres
+        adecuado.
+
+        El bot responde incluyendo en la definición de la clase un par de constructores, métodos mutadores 
+        (\textit{setters}) y un par de métodos que permiten calcular volumen y área de la superficie de la caja.
+        \ChatGPT{} informa asimismo de que declaración e implementación de la clase deberían ubicarse en sendos ficheros
+        con extensiones \texttt{.cpp} y \texttt{.h}. 
+  \item Escribe ahora la definición de los métodos que deberían incluirse en el fichero \texttt{.cc}.
+  \item Implementa la sobrecarga del operador de inserción (\texttt{$<<$}).
+  \item ¿Podrías añadir comentarios en formato \textit{Doxygen} para la función \texttt{operator$<<$}?
+  \item Implementa la sobrecarga del operador de extracción (\texttt{$>>$}).
+  \item Implementa la sobrecarga de operadores requerida para comprobar si una caja está antes que otra 
+        en un listado ordenado por volumen de mayor a menor.
+  \item Escribe el código de una función \textit{main()} en la que se instancien 2 objetos de tipo \textit{Box} 
+        con volúmenes diferentes y se muestre por pantalla cuál de los dos se encuentra antes en el listado de volumen.
+  \item Escribe un fichero \textit{Makefile} para compilar el programa usando tres ficheros:
+    \texttt{main-box.cc}, \texttt{box.cc} y \texttt{box.h}.
+        El compilador que queremos usar es \textit{g++}.
+  \item ¿Qué ficheros deberían incluirse en \texttt{main.box.cc} para que el programa compile correctamente?.
+  \item ¿Qué declaraciones debería incluir en el fichero \texttt{box.h} para que el programa compile
+    correctamente?.
+  \item Al compilar obtengo el siguiente error:
+
+        \texttt{
+In file included from main-box.cc:1:
+box.h:94:6: error: ‘ostream’ in namespace ‘std’ does not name a type
+        }
+
+        \ChatGPT{} responde indicando:
+
+        \textit{
+        The error message you provided indicates that the compiler is unable to find the definition of std::ostream. 
+        This is likely because the $<$iostream$>$ header file, which defines the std::ostream class, has not been included in the box.h file.
+        To fix this error, you need to include the <iostream> header file at the beginning of box.h. 
+        }
+\end{enumerate}
+%
+%     Para sobrecargar el operador de extracción ¿es perferible hacerlo como una función friend o usando una función ordinaria?
+%     To overload the extraction operator, is it preferable to do it as a friend function or using an ordinary function?
+%     Respuesta:
+%     It is generally considered best practice to overload the extraction operator (operator>>) as a non-member function, 
+%     rather than a friend function. 
+%     This is because the extraction operator is typically used to extract data from an input stream, and making it a friend 
+%     function of a class would allow it to access the class's private and protected data members, which could be a security risk. 
+%     Additionally, making it a non-member function allows for greater flexibility and encapsulation, as it can be used with any 
+%     object that can be passed to it as an input stream, rather than being limited to a specific class.
+A cada una de las peticiones anteriores el bot responde entregando sucesivos fragmentos de código con sus correspondientes 
+explicaciones.
+Una vez corregido el último error señalado, el programa completo con los tres ficheros puede compilarse con
+\texttt{make} obteniéndose un código ejecutable que funciona de acuerdo a la especificación.
+El listado \ref{} muestra el contenido del fichero \texttt{box.cc} en el que se han eliminado los comentarios
+en formato \textit{Doxigen} que el bot incluía antes de cada una de las funciones.
+%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\lstinputlisting[float=*t, caption={Declaración de la clase \textit{Box}}, label=code:boxh]{2.h}
+\lstinputlisting[caption={Declaración de la clase \textit{Box}}, label=code:boxh]{box1.h}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstinputlisting[float=*t, caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Conclusiones}
+Como muestran los experimentos reflejados en la sección anterior, la capacidad de resolver problemas sencillos
+de programación como los que se utilizan en los primeros cursos del Grado en Ingeniería Informática es
+sobresaliente.
+Podemos afirmar que \ChatGPT{} es capaz de resolver correctamente la mayoría de los problemas especificados en
+la plataforma \jutge{}, cumpliendo no solo con el requisito de un correcto funcionamiento sino también con los
+de buenas prácticas y estilo de programación que se exigen en ASIG.
+
+Queda patente que en manos de un programador experimentado, el sistema es -ya en su estado actual- una
+herramienta muy valiosa para la realización de tareas que pueden entrañar un cierto grado de sofisticación.
+Interactuando con el sistema es posible refinar en pasos sucesivos una solución dirigiéndola adecuadamente
+hasta lograr satisfacer unos requisitos predeterminados por el usuario.
+
 Una relación no exhaustiva de preguntas que los experimentos expuestos anteriormente motivan y sobre las cuales 
 debemos reflexionar son las siguientes:
 \begin{itemize} 
@@ -581,12 +664,12 @@ inmediata.
 Si tal como muchos expertos vaticinan 
 \cite{Welsh:2023:TEoP}, 
 el desarrollo de grandes modelos de lenguajes supondrá en breve la desaparición de los programadores de
-ordenadores, los estudios de Informática habrán de modificarse para adaptarse a esta nueva realidad. 
+ordenadores, la enseñanza de la programación habrá de modificarse para adaptarse a esta nueva realidad. 
 Del mismo modo que en la actualidad un desarrollador de software en general desconoce los detalles del
 hardware en el que se ejecutan sus programas, es posible que en el futuro un ingeniero de software no
-tenga que conocer los detalles de los programas que intervienen en un sistema complejo.
-Habrá en este caso que desplazar progresivamente el énfasis en los contenidos de programación hacia conocimientos 
-relacionados con ingeniería y arquitectura del software.
+tenga que conocer los detalles del código que interviene en un sistema complejo.
+Habrá en este caso que desplazar progresivamente el énfasis en los contenidos de programación hacia 
+conocimientos relacionados con ingeniería y arquitectura del software.
 
 Hurtar al alumnado el uso de los asistentes basados en IA generativa en sus prácticas de programación
 \cite{Cassidy:2023:AUR}, 
@@ -603,7 +686,7 @@ a ámbitos diferentes del de la programación de ordenadores) o foros de discusi
 \textit{StackOverflow} en los que se ofrecen soluciones a multitud de problemas de diferente tipo supuso en su
 momento una ampliación del conjunto de herramientas disponibles a la hora de programar y de aprender a
 programar.
-Es lo mismo que ocurre hoy en día, pero en mayor medida si cabe, porque las capacidades que en la
+Es lo mismo que ocurre hoy en día, pero agravado si cabe, porque las capacidades que en la
 actualidad muestran los nuevos asistentes son realmente impresionantes y es difícil aventurar lo que pueden
 llegar a ofrecer en un corto o medio plazo.
 De hecho, son las prestaciones que ya ofrecen estos asistentes lo que más ha llamado la atención a
@@ -615,54 +698,8 @@ necesario, sí es cierto que estas tecnologías van a impactar en la praxis doce
 metodologías para incorporar estos cambios.
 Integrar estos asistentes en las metodologías docentes e instruir a profesorado y alumnado acerca de su 
 funcionamiento y de sus posibles usos será clave para lograr una utilización correcta de estos programas.
-
 \balance{}
 \bibliographystyle{jenui}
 %\nocite{*}
 \bibliography{Jenui2023}
-
-
-%%%%%%%%%%%%%%%%%%%% Table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{table*}
-%	\begin{center}
-%	\begin{tabular}{p{5.2cm}p{4.5cm}cc}
-%		\textbf{Título} & \textbf{Autores} & \textbf{Edición} & 
-%		\textbf{Citas (Heterocitas)}\\\hline
-%		Niveles de Competencia de los Objetivos Formativos en las 
-%		Ingenierías & Miguel Valero-Garcia y Juan José Navarro & 2001 
-%		& 21 (18) \\\hline
-%		Formulación de los Objetivos de una Asignatura en Tres Niveles
-%		Jerárquicos & Juan José Navarro, Miguel Valero-Garcia, Fermín
-%		Sánchez Carracedo y Jordi Tubella & 2000 & 18 (8) \\\hline
-%		¿Cómo serán las asignaturas del EEES? & Fermín Sánchez
-%		Carracedo & 2005 & 10 (6) \\\hline
-%		Evaluación continuada a un coste razonable & Miguel
-%		Valero-Garcia, Luís M. Díaz de Cerio & 2002 & 9 (9) \\\hline
-%		Hacia la Evaluación Continua Automática de Prácticas de
-%		Programación & Juan Carlos Rodríguez del Pino, Margarita Díaz
-%		Roca, Zenón J. Hernández Figueroa y José Daniel González
-%		Domínguez & 2007 & 8 (7) 
-%	\end{tabular}
-%	\end{center}
-%	\caption{\label{tab:mascit}Artículos más citados en las Jenui.}
-%\end{table*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%% Fig. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}[htbp]
-%\centerline{\includegraphics[width=\linewidth]{mediaref}}
-%\caption{\label{fig:medias} Número medio de referencias por artículo en las 15 ediciones de las Jenui} 
-%\label{fig:} 
-%\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%% Fig. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure*}
-%	\begin{center}
-%	\includegraphics[width = 0.8\linewidth]{diagrLargo.jpg}
-%	\end{center}
-%	\caption{Diagrama en ancho de dos columnas.}
-%\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \end{document}
