@@ -123,27 +123,15 @@
 
 \author{ \small
 \begin{tabular}{@{\extracolsep{3mm}}c}
-\large Anónimo\\
-Departamento Anónimo\\
-Universidad Anónima\\
-XXXXX Ciudad Anónima \\
-anonimo@xxxxxx.es
+\large Francisco de Sande \\
+Departamento de Ingeniería Informática y de Sistemas \\
+Universidad de La Laguna \\
+38200 La Laguna. S/C de Tenerife \\
+fsande@ull.es
 \end{tabular}
 }
-%\author{ \small
-%\begin{tabular}{@{\extracolsep{3mm}}c}
-%\large Francisco de Sande \\
-%Departamento de Ingeniería Informática y de Sistemas \\
-%Universidad de La Laguna \\
-%38200 La Laguna. S/C de Tenerife \\
-%fsande@ull.es
-%\end{tabular}
-%}
 
 \date{}
-
-%%%  Referencias
-% https://aihub.csic.es/inteligencia-artificial-en-educacion-golem-creativo-o-destructor/
 
 \begin{document}
 \maketitle
@@ -163,7 +151,7 @@ programación en una asignatura de primer curso del grado en Ingeniería Inform�
 Se relacionan algunos experimentos realizados con \ChatGPT{} aplicados a los ejercicios prácticos de
 programación que se utilizan como prácticas de laboratorio en la asignatura.
 El trabajo finaliza con la presentación de algunas conclusiones que se derivan de los experimentos
-realizados así como con el planteamiento de diversas cuestiones que siendo de incuestionable actualidad carecen
+realizados así como con el planteamiento de diversas cuestiones que siendo de indudable actualidad carecen
 de respuestas concluyentes en muchos casos.
 \end{abstract}
 
@@ -181,7 +169,7 @@ This paper analyses the possible impact of this technology on the teaching-learn
 a first year subject of a Computer Engineering degree.
 Some experiments carried out with \ChatGPT{} applied to the practical programming exercises used as laboratory 
 practice in the subject are presented.
-The work concludes with the presentation of some conclusions derived from the experiments carried out, as well 
+The work ends with the presentation of some conclusions derived from the experiments carried out, as well 
 as with the posing of several questions that, although undoubtedly topical, lack conclusive answers in many cases.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section*{Palabras clave}
@@ -191,24 +179,20 @@ as with the posing of several questions that, although undoubtedly topical, lack
 \section{Introducción}
 La programación de ordenadores es una actividad transversal a cualquier rama de la informática y su
 importancia es compartida por cualquier especialización en esta titulación.
-\textit{Informática} 
-%\textit{Informática Básica} 
-(ASIG, de ahora en adelante) 
+\textit{Informática Básica} 
+(IB, de ahora en adelante) 
 es una asignatura de 6 créditos que se imparte en el primer cuatrimestre 
-del primer curso del Grado en Ingeniería Informática en la Escuela Anónima
-%Superior de Ingeniería y Tecnología de la 
-de la Universidad de Anónima.
-%La Laguna.
+del primer curso del Grado en Ingeniería Informática en la Escuela Superior de Ingeniería y Tecnología de la 
+de la Universidad de La Laguna.
 Se trata de la primera asignatura (y única en ese primer cuatrimestre) de perfil eminentemente informático que
-cursa el alumnado de la titulación y es en ASIG donde los estudiantes toman
+cursa el alumnado de la titulación y es en IB donde los estudiantes toman
 contacto con la programación y en la que han de aprender los fundamentos de esta materia.
 Los conceptos objeto de estudio son comunes, con pequeñas variaciones, a cualquier lenguaje de programación
-orientado a objetos, que es el paradigma estudiado en ASIG.
+orientado a objetos, que es el paradigma estudiado en IB.
 El número de estudiantes de primer curso está en torno a los 250 y los contenidos de la asignatura pueden 
 consultarse en la Guía Docente
 %\cite{ULL:2022:GD} 
-\footnote{Guía Docente de ASIG\\ \href{https://www.anonimo.es/}{\scriptsize{\texttt{https://www.anonimo.es/}}}}.
-%\footnote{Guía Docente de ASIG\\ \href{https://www.ull.es/apps/guias/guias/view_guide/34182/}{\scriptsize{\texttt{https://www.ull.es/apps/guias/guias/view\_guide/34182/}}}}.
+\footnote{Guía Docente de IB\\ \href{https://www.ull.es/apps/guias/guias/view_guide/34182/}{\scriptsize{\texttt{https://www.ull.es/apps/guias/guias/view\_guide/34182/}}}}.
 de la misma.
 Al margen de tres temas dedicados a una introducción a los Sistemas Operativos, Redes y Bases de Datos,
 el grueso de los contenidos (en torno a 12 de las 15 semanas del cuatrimestre) se dedican a introducir al
@@ -269,7 +253,7 @@ acreditar que se es una buena conductora requiere muchas horas de práctica y ex
 infrecuentes.
 Del mismo modo cualquier informático dirá que sabe programar pero sus habilidades en esta materia dependerán
 muy directamente de las horas de práctica que haya dedicado a la misma.
-Siguiendo esta idea, se recomienda al alumnado de ASIG que realice cuantos ejercicios prácticos
+Siguiendo esta idea, se recomienda al alumnado de IB que realice cuantos ejercicios prácticos
 sean capaces para, de forma progresiva, ir incrementando sus capacidades como programadoras.
 
 Las prácticas de la asignatura se convierten pues en una oportunidad para que el alumnado mejore destrezas y
@@ -298,7 +282,7 @@ cubren los siguientes tópicos:
   \item Introducción a la Programación Orientada a Objetos
 \end{itemize}
 
-Desde hace ya varios cursos en ASIG se viene usando la plataforma \jutge{} (\textit{juez}) 
+Desde hace ya varios cursos en IB se viene usando la plataforma \jutge{} (\textit{juez}) 
 \cite{Petit:Jutge:2018} para la evaluación de las prácticas.
 \jutge{} ha sido desarrollado en la Universidad Politécnica de Catalunya, orientado tanto al profesorado 
 como al alumnado.
@@ -319,14 +303,14 @@ En su cuenta de \jutge{} cada estudiante dispone de un cuadro de mandos en el qu
 envíos que ha realizado, el de problemas aceptados y rechazados así como diversos gráficos que muestran la
 evolución en su trabajo con los problemas de la plataforma.
 
-Este modo de trabajo se aprovecha en las prácticas de ASIG: en cada sesión de evaluación se le pide al alumnado
-que resuevla un pequeño número de problemas (programas) de \jutge{}.
+Este modo de trabajo se aprovecha en las prácticas de IB: en cada sesión de evaluación se le pide al alumnado
+que resuelva un pequeño número de problemas (programas) de \jutge{}.
 La evaluación de la sesión depende no solo del número de problemas resuelto (no suelen ser más de dos o tres)
 sino de la calidad del código desarrollado.
 \jutge{} comprueba exclusivamente (mediante la comprobación de los correspondientes tests) que el programa evaluado 
-funcione correctamente, mientras que en ASIG se enfatizan otros aspectos del código que nos parecen tanto o más 
+funcione correctamente, mientras que en IB se enfatizan otros aspectos del código que nos parecen tanto o más 
 relevantes que el propio funcionamiento del mismo, que obviamente es una condición ineludible.
-Algunos de los requisitos que se exigen a los programas de prácticas de ASIG se definen en la Guía de estilo de 
+Algunos de los requisitos que se exigen a los programas de prácticas de IB se definen en la Guía de estilo de 
 referencia que se utiliza en la asignatura 
 %\cite{Google::GSG}
 \footnote{Google C++ Style Guide\\ \href{https://google.github.io/styleguide/cppguide.html}{\scriptsize{\texttt{https://google.github.io/styleguide/cppguide.html}}}}.
@@ -402,7 +386,7 @@ diversos campos
 %con patrones de codificación inseguros, lo que da lugar a la posibilidad de sintetizar código que contenga estos patrones indeseables".
 
 En la siguiente sección se presentan algunas experiencias significativas realizadas con \ChatGPT{} en el ámbito
-de los ejercicios de programación de las prácticas de ASIG.
+de los ejercicios de programación de las prácticas de IB.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Experiencias con \ChatGPT{}}
 Aunque el estudio que se ha realizado no es exhaustivo, se ha utilizado \ChatGPT{} para tratar de resolver
@@ -410,15 +394,13 @@ diversos problemas de \jutge{}
 \footnote{
 Todos los programas que se mencionan en este trabajo se han alojado convenientemente documentados en un repositorio privado.
 Cualquier persona interesada en acceder a esos programas puede solicitarlo por correo electrónico al autor 
-(\texttt{anonimo@anonimo.es})
-%(\texttt{fsande@ull.es})
+(\texttt{fsande@ull.es})
 }. 
 Debido a limitaciones de espacio no podemos reseñar todos los experimentos realizados, de modo que 
 se exponen solamente los que consideramos más relevantes o de interés para comprender el modo de funcionamiento 
-del bot y sus capacidades para resolver ejercicios concretos.
+del \textit{bot} y sus capacidades para resolver ejercicios concretos.
 
-Todos los enunciados de problemas de \jutge{} están públicamente disponibles en la
-plataforma 
+Todos los enunciados de problemas de \jutge{} están públicamente disponibles en la plataforma 
 \footnote{Jutge Problems \href{https://jutge.org/problems/}{\scriptsize{\texttt{https://jutge.org/problems/}}}}
 y cada uno de ellos cuenta con una especificación clara y precisa así como de un conjunto de tests públicos.
 Se han descrito los problemas a \ChatGPT{} tanto en inglés (idioma en que están descritos la mayoría de
@@ -469,19 +451,19 @@ a \ChatGPT{}, copiada casi literalmente de \jutge{}:
 %\end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 Con esta especificación, el bot entrega una solución que es aceptada (\textit{AC}) por \jutge{} pero que no cumple algunos de los
-requisitos que se exigen en ASIG. 
+requisitos que se exigen en IB. 
 En particular, el código de la solución utiliza \textit{a, b, c,} y \textit{d} como identificadores de
 variables, tal como frecuentemente hacen los estudiantes, puesto que así figuran en la especificación.
 No obstante, después de sucesivas interacciones con el bot en el que se le indica:
 \begin{enumerate}
   \item Could you please avoid the use of single character identifiers and use meaningful names instead?
   \item Please, use a function called from main() in your solution
-  \item Can yoy make your code compliant with the Google Style Guide for C++?
+  \item Can you make your code compliant with the Google Style Guide for C++?
   \item Can you avoid the use of ``\texttt{using namespace std}''?
   \item Can you write a space on both sides of any binary operator, as the Google Style Guide for C++ requires?
   \item Can you finally include Doxygen format header comments in the code?
 \end{enumerate}
-Se obtiene un código que es aceptado por \jutge{} y que cumple los requisitos exigidos al alumnado de ASIG en la
+Se obtiene un código que es aceptado por \jutge{} y que cumple los requisitos exigidos al alumnado de IB en la
 evaluación de sus prácticas.
 
 Consideremos a continuación el problema 
@@ -490,7 +472,7 @@ Se trata de determinar si cada uno de los números naturales de una secuencia es
 Al entregar a \ChatGPT{} el enunciado del problema en inglés junto con los tests del mismo, tal como figuran en \jutge{}, 
 la solución que se obtuvo fue la de fuerza bruta consistente en probar para el número $N$ todos los divisores en el 
 rango $[2, N-1]$.
-Esta solución no recibe el veredicto ``\textit{Accepted}'' en \jutge{} sino que la plataforme indica
+Esta solución no recibe el veredicto ``\textit{Accepted}'' en \jutge{} sino que la plataforma indica
 como veredicto \textit{Execution Error (time limit exceeded)}.
 Ello se debe a que espera un algoritmo más eficiente para este cómputo.
 
@@ -527,7 +509,7 @@ Suministrándole a \ChatGPT{} la breve descripción del problema en inglés tal 
 entrega una solución que, si bien pasa los tests públicos no consigue el veredicto \textit{AC} del juez porque
 falla en algún test privado.
 Hay que tener en cuenta que solo se sabe que el programa falla para algún test (secuencia de números) pero no
-se sabe más sobre ella.
+se tiene información adicional sobre el test que produce el fallo.
 Informando al bot de esta circunstancia, éste responde con una segunda versión de la solución en la que ha
 resuelto algún caso particular en el que, efectivamente admite que su primera versión fallaría.
 Esta segunda versión adolece del mismo problema que la anterior: falla en algún test privado de \jutge{}, que
@@ -541,7 +523,7 @@ Este modo de trabajo, interactuando con el bot para refinar la solución en suce
 utilizó para el experimento que se realizó con un problema consistente en la implementación en C++ de una
 clase para representar ``cajas''. 
 Se trata de un problema de programación que ha figurado como ejercicio de evaluación, en este caso
-en exámenes escritos, del alumnado de ASIG.
+en exámenes escritos, del alumnado de IB.
 Se exponen a continuación en español las sucesivas peticiones que se realizaron a \ChatGPT{} en inglés:
 \begin{enumerate}
   \item A continuación (véase el Listado \ref{code:boxh}) se muestra la definición parcial en C++ de una clase \textit{Box}
@@ -607,7 +589,7 @@ de programación como los que se utilizan en los primeros cursos del Grado en In
 sobresaliente.
 Podemos afirmar que el asistente es capaz de resolver correctamente la mayoría de los problemas especificados en
 la plataforma \jutge{}, cumpliendo no solo con el requisito de un correcto funcionamiento sino también con los
-de buenas prácticas y estilo de programación que se exigen en ASIG.
+de buenas prácticas y estilo de programación que se exigen en IB.
 
 Queda patente que en manos de un programador experimentado, el sistema es -ya en su estado actual- una
 herramienta muy valiosa para la realización de tareas que pueden entrañar un cierto grado de sofisticación.
