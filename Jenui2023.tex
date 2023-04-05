@@ -24,16 +24,23 @@
 \definecolor{gray45}{gray}{.45}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Para listados de código
+%% Frame margins. See: https://tex.stackexchange.com/questions/551500/elegant-margin-in-listing-environment
+%
 \usepackage{listings,multicol}  % <--- multicol only required, if the multicols= option shall be used
 \lstset{language=C++,
+	captionpos=b,			% Posición de los títulos abajo (bottom)
+	%%%%%%%%%%%%%%%
+	frame=tblr,         % Square frame (equivalent to fame=single) 
+        framerule=1pt,
+        framexleftmargin=1em,
+        xleftmargin={\dimexpr 1em+3pt},
+	linewidth={\dimexpr \linewidth-3pt},
+	%%%%%%%%%%%%%%%
         basicstyle=\scriptsize\ttfamily,
-        commentstyle=\color{blue},           % comentarios en azul
+        commentstyle=\color{blue},      % comentarios en azul
         keywordstyle=\bfseries,
         stringstyle=\color{red}\ttfamily,
         morecomment=[l][\color{magenta}]{\#}
-        framexleftmargin=5mm,									% BGD: Margen izquierdo de los marcos (para que quepan num. de línea) 
-        frame=trbl,														% BGD: Cuadro  (t/T: top, r/R: right, b/B: bottom, l/L: left): x->thin, X->thick
-        framesep=4pt,
 }
 %\usepackage{listings} 
 %\lstloadlanguages{C++}
@@ -59,30 +66,30 @@
 %  stringstyle=\ttfamily,
 %	%stringstyle=\color{red}\texttt,       % BGD: Cadenas en rojo
 %	directivestyle=\color{oscuro}\texttt,	
-%  emph={pragma,llc,omp},								% BGD: Resaltar las palabras pragma, llc y omp
+%  emph={pragma,llc,omp},			% BGD: Resaltar las palabras pragma, llc y omp
 %	emphstyle=\textbf,
-%	showstringspaces=false,								% BGD: No mostar espacios
+%	showstringspaces=false,		% BGD: No mostar espacios
 %	columns=fixed,
 %	basewidth={0.6em, 0.45em},
 %	xleftmargin=5mm,
-%	keepspaces=true,											% BGD: Mantener espacios
-%	framexleftmargin=5mm,									% BGD: Margen izquierdo de los marcos (para que quepan num. de línea) 
-%	frame=trbl,														% BGD: Cuadro  (t/T: top, r/R: right, b/B: bottom, l/L: left): x->thin, X->thick
+%	keepspaces=true,			% BGD: Mantener espacios
+%	framexleftmargin=5mm,			% BGD: Margen izquierdo de los marcos (para que quepan num. de línea) 
+%	frame=trbl,				% BGD: Cuadro  (t/T: top, r/R: right, b/B: bottom, l/L: left): x->thin, X->thick
 %	framesep=4pt,
-%	%frameround=fttt,											% BGD: Cuadro con esquina curvadas
+%	%frameround=ftt,			% BGD: Cuadro con esquina curvadas
 %  %framextopmargin=3pt,
 %  %framexbottommargin=3pt,
 %  %framexleftmargin=0.4cm,
 %  %framesep=0pt,
-%	rulesepcolor=\color{black},						% BGD: Color de los cuadros azul
-%	numbers=left,													% BGD: Números de línea a la izquierda
-%	firstnumber=1,												% BGD: Número línea empieza en 0 (línea vacía, no se muestra)
-%	stepnumber=1,													% BGD: Números línea a línea
-%	numberstyle=\scriptsize,										% BGD: Números de línea pequeños
-%	numbersep=8pt,												% BGD: Números de línea separados 8 pts a la izquierda
-%	numberblanklines=false,								% BGD: No pone números de línea en líneas vacías
-%	extendedchars=true,									  % BGD: Utiliza caracteres extendidos (tildes, etc.)
-%	inputencoding=latin1,									
+%	rulesepcolor=\color{black},		% BGD: Color de los cuadros azul
+%	numbers=left,				% BGD: Números de línea a la izquierda
+%	firstnumber=1,				% BGD: Número línea empieza en 0 (línea vacía, no se muestra)
+%	stepnumber=1,				% BGD: Números línea a línea
+%	numberstyle=\scriptsize,		% BGD: Números de línea pequeños
+%	numbersep=8pt,				% BGD: Números de línea separados 8 pts a la izquierda
+%	numberblanklines=false,			% BGD: No pone números de línea en líneas vacías
+%	extendedchars=true,			% BGD: Utiliza caracteres extendidos (tildes, etc.)
+%	inputencoding=latin1,							
 %  %inputencoding=utf8x,									
 %	tabsize=2,														% BGD: Tamaño de tabulador para indentaciones = 2
 %	breaklines=true,											% BGD: Cortar líneas si son muy grandes
@@ -410,7 +417,7 @@ Para ello se ha iniciado una nueva sesión con el bot en uno u otro idioma depen
 Si bien las soluciones que entrega el sistema no son exactamente las mismas, no se han hallado diferencias
 significativas en cuanto a la calidad tanto algorítmica como de estilo en las soluciones obtenidas.
 %%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lstinputlisting[float=*t, captionpos=b, caption={Test de primalidad suministrado por \ChatGPT{}. Complejidad $O(\sqrt(n))$}, label=code:prime]{prime.cc}
+\lstinputlisting[float=*t, caption={Test de primalidad suministrado por \ChatGPT{}. Complejidad $O(\sqrt(n))$}, label=code:prime]{prime.cc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Para que el bot resuelva cualquiera de los problemas no ha resultado necesario suministrarle información
 adicional a la que figura en el propio enunciado de \jutge{}, habiéndosele entregado al bot la información
@@ -496,7 +503,7 @@ de la función.
 El código completo de la función es el que se muestra en el Listado \ref{code:prime}.
 
 %%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lstinputlisting[captionpos=b, caption={Declaración preliminar de la clase \textit{Box}}, label=code:boxh]{box1.h}
+\lstinputlisting[caption={Declaración preliminar de la clase \textit{Box}}, label=code:boxh]{box1.h}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 En el caso de \textit{Primality}, en una sesión diferente con \ChatGPT{} se le entregó el enunciado en español y
 en ese caso, el bot devolvió directamente la solución con la optimización del código, pero la solución no cumplía
@@ -517,8 +524,16 @@ Esta segunda versión adolece del mismo problema que la anterior: falla en algú
 por lo tanto no la acepta.
 Se le vuelve a indicar el fallo a \ChatGPT{} y finalmente produce una solución que \jutge{} valida.
 
+\lstinputlisting[float=*t, caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
 %%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lstinputlisting[float=*t, captionpos=b, caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
+%\begin{table*}[t]
+%\begin{center}
+%\begin{tabular}{c}
+%%\lstinputlisting[float=*t, caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
+%\lstinputlisting[caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
+%\end{tabular}
+%\end{center}
+%\end{table*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Este modo de trabajo, interactuando con el bot para refinar la solución en sucesivas iteraciones fue el que se
 utilizó para el experimento que se realizó con un problema consistente en la implementación en C++ de una
