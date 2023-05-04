@@ -5,6 +5,8 @@
 \usepackage{balance}
 \usepackage{jenuia4}
 \usepackage{url}
+\usepackage{authblk}
+
 %\usepackage{graphicx}
 
 % Mis paquetes. No incluídos en la plantilla de Jenui
@@ -118,26 +120,37 @@
 \newcommand{\ChatGPT}{\textit{ChatGPT}{}}           % BGD: Nuevos comandos para imprimir con estilo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{El impacto de asistentes basados en IA en la enseñanza-aprendizaje de la programación}
-%\author{\normalsize 
-%\begin{tabular}{@{\extracolsep{3mm}}cc}
-%{\large Joe Miró Julià }                  & {\large Mercedes Marqués}\\
-%Departament de Matemàtiques i Informàtica & Departamento de Ing. y Ccia. de los Comput.\\
-%Universitat de les Illes Balears          & Universitat Jaume I\\
-%07122 Palma de Mallorca                   & Castellón\\
-%\url{joe.miro@uib.es}                     & \url{merche.marques@uji.es}
+%\author{ \small
+%\begin{tabular}{@{\extracolsep{3mm}}c}
+%\large Francisco de Sande \\
+%Departamento de Ingeniería Informática y de Sistemas \\
+%Universidad de La Laguna \\
+%38200 La Laguna. S/C de Tenerife \\
+%fsande@ull.es
 %\end{tabular}
 %}
 
-\author{ \small
-\begin{tabular}{@{\extracolsep{3mm}}c}
-\large Francisco de Sande \\
-Departamento de Ingeniería Informática y de Sistemas \\
-Universidad de La Laguna \\
-38200 La Laguna. S/C de Tenerife \\
-fsande@ull.es
-\end{tabular}
-}
+%\author{\normalsize 
+%\begin{tabular}{@{\extracolsep{3mm}}cc}
+%{\large Francisco de Sande }                          & {\large Pablo López Ramos}\\
+%Departamento de Ingeniería Informática y de Sistemas  & Instituto de Astrofísica de Canarias \\
+%Universidad de La Laguna                              & Universidad de La Laguna \\
+%38200 La Laguna. S/C de Tenerife                      & 38200 La Laguna. S/C de Tenerife  \\
+%\url{fsande@ull.es}                                   & \url{plopez@iac.es}
+%\end{tabular}
+%}
 
+\renewcommand*{\Authsep}{, }
+\renewcommand*{\Authand}{ y }
+\renewcommand*{\Authands}{, }
+
+\author[1]{Francisco de Sande}
+\author[2]{Pablo López Ramos}
+\affil[1]{Departamento de Ingeniería Informática y de Sistemas. Universidad de La Laguna}
+\affil[2]{Instituto de Astrofísica de Canarias. Universidad de La Laguna}
+%\affil[2]{\texttt{fsande@ull.es}, \texttt{plopez@iac.es}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \date{}
 
 \begin{document}

@@ -1,6 +1,0 @@
-@Misc{URL::Jutge,
-  key           = {Jutge},
-  title         = {{Jutge Home Page}},
-  note          = {\href{}
-                  {\small{\texttt{}}}},
-}
