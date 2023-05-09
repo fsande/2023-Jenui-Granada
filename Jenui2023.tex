@@ -114,7 +114,7 @@
   %\renewcommand\thelstlisting{\arabic{chapter}.\arabic{section}}
   \renewcommand{\thelstlisting}{\arabic{lstlisting}}
 }
-\renewcommand{\lstlistingname}{Listado} % Los títulos de los códigos insertados se denotan con "Listado"
+\renewcommand{\lstlistingname}{Figura} % Los títulos de los códigos insertados se denotan con "Listado"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\jutge}{\textit{Jutge.org}{}}           % BGD: Nuevos comandos para imprimir con estilo
 \newcommand{\ChatGPT}{\textit{ChatGPT}{}}           % BGD: Nuevos comandos para imprimir con estilo
@@ -148,7 +148,8 @@
 \author[2]{Pablo López Ramos}
 \affil[1]{Departamento de Ingeniería Informática y de Sistemas. Universidad de La Laguna}
 \affil[2]{Instituto de Astrofísica de Canarias. Universidad de La Laguna}
-%\affil[2]{\texttt{fsande@ull.es}, \texttt{plopez@iac.es}}
+\affil[ ]{\texttt{fsande@ull.es}, \texttt{plopez@iac.es}}
+%\affil[ ]{\texttt{plopez@iac.es}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \date{}
@@ -202,7 +203,7 @@ importancia es compartida por cualquier especialización en esta titulación.
 \textit{Informática Básica} 
 (IB, de ahora en adelante) 
 es una asignatura de 6 créditos que se imparte en el primer cuatrimestre 
-del primer curso del grado en Ingeniería Informática en la Escuela Superior de Ingeniería y Tecnología de la Universidad de La Laguna.
+del primer curso del grado en Ingeniería Informática en la ESIT de la Universidad de La Laguna.
 Se trata de la primera asignatura (y única en ese primer cuatrimestre) de perfil eminentemente informático que
 cursa el alumnado de la titulación y es en IB donde el estudiantado toma
 contacto con la programación y en la que han de aprender los fundamentos de esta materia.
@@ -213,8 +214,8 @@ consultarse en la guía docente
 %\cite{ULL:2022:GD} 
 \footnote{Guía docente de IB\\ \href{https://www.ull.es/apps/guias/guias/view_guide/34182/}{\scriptsize{\texttt{https://www.ull.es/apps/guias/guias/view\_guide/34182/}}}}.
 de la misma.
-Al margen de tres temas dedicados a una introducción a los Sistemas Operativos, Redes y Bases de Datos,
-el grueso de los contenidos (en torno a 12 de las 15 semanas del cuatrimestre) se dedican a introducir al
+%Al margen de tres temas dedicados a una introducción a los Sistemas Operativos, Redes y Bases de Datos,
+El grueso de los contenidos (en torno a 12 de las 15 semanas del cuatrimestre) se dedican a introducir al
 alumnado en la programación, siendo C++ el lenguaje vehicular utilizado para estudiarla.
 Se trata de una asignatura con una importante proporción de contenidos prácticos en la que cada estudiante
 recibe 4 horas presenciales de clase a la semana distribuídas del siguiente modo:
@@ -513,15 +514,15 @@ el bot modifica la función, entregando en este caso una versión que sí es ace
 A pesar de haberlo indicado en el enunciado del problema, la función entregada no cumple con el convenio que
 establece la guía de Estilo de Google, pero si se le indica esa circunstancia, el bot corrige el identificador
 de la función. 
-El código completo de la función es el que se muestra en el Listado \ref{code:prime}.
+El código completo de la función es el que se muestra en la Figura \ref{code:prime}.
 
-%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lstinputlisting[caption={Declaración preliminar de la clase \textit{Box}}, label=code:boxh]{box1.h}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 En el caso de \textit{Primality}, en una sesión diferente con \ChatGPT{} se le entregó el enunciado en español y
 en ese caso, el bot devolvió directamente la solución con la optimización del código, pero la solución no cumplía
 con el estándar de Estilo en cuanto a la colocación de las llaves de apertura y cierre de bloques en C++.
 
+%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstinputlisting[caption={Declaración preliminar de la clase \textit{Box}}, label=code:boxh]{box1.h}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Particularmente interesante nos ha resultado el caso del experimento realizado con el problema
 \href{https://jutge.org/problems/P73501_en/statement}{\textit{Increasing Pairs}}, 
 consistente en calcular el número de pares de números consecutivos en una secuencia en los que el segundo
@@ -537,25 +538,18 @@ Esta segunda versión adolece del mismo problema que la anterior: falla en algú
 por lo tanto no la acepta.
 Se le vuelve a indicar el fallo a \ChatGPT{} y finalmente produce una solución que \jutge{} valida.
 
-\lstinputlisting[float=*t, caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
-%%%%%%%%%%%%%%%%% Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{table*}[t]
-%\begin{center}
-%\begin{tabular}{c}
-%%\lstinputlisting[float=*t, caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
-%\lstinputlisting[caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
-%\end{tabular}
-%\end{center}
-%\end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstinputlisting[float=*h, caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Este modo de trabajo, interactuando con el bot para refinar la solución en sucesivas iteraciones fue el que se
 utilizó para el experimento que se realizó con un problema consistente en la implementación en C++ de una
 clase para representar ``cajas''. 
+
 Se trata de un problema de programación que ha figurado como ejercicio de evaluación, en este caso
 en exámenes escritos, del alumnado de IB.
 Se exponen a continuación en español las sucesivas peticiones que se realizaron a \ChatGPT{} en inglés:
 \begin{enumerate}
-  \item A continuación (véase el Listado \ref{code:boxh}) se muestra la definición parcial en C++ de una clase \textit{Box}
+  \item A continuación (véase la Figura \ref{code:boxh}) se muestra la definición parcial en C++ de una clase \textit{Box}
     que representa una caja.
   \item Queremos que el código siga las recomendaciones de la guía de Estilo de Google para C++.
         Completa la definición de la clase \textit{Box} incluyendo los constructores y métodos que consideres
@@ -608,7 +602,7 @@ A cada una de las peticiones anteriores el bot responde entregando sucesivos fra
 explicaciones.
 Una vez corregido el último error señalado, el programa completo con los tres ficheros puede compilarse con
 \texttt{make} obteniéndose un código ejecutable que funciona de acuerdo a la especificación.
-El listado \ref{code:boxc} muestra el contenido del fichero \texttt{box.cc} en el que se han eliminado los comentarios
+La Figura \ref{code:boxc} muestra el contenido del fichero \texttt{box.cc} en el que se han eliminado los comentarios
 en formato \textit{Doxygen} que el bot incluyó antes de cada una de las funciones.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
