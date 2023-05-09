@@ -1,1 +1,0 @@
-\footnote{Google C++ Style Guide\\ \href{}{\scriptsize{\texttt{}}}}.
