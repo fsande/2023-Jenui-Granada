@@ -7,14 +7,11 @@
 \usepackage{url}
 \usepackage{authblk}
 
-%\usepackage{graphicx}
-
 % Mis paquetes. No incluídos en la plantilla de Jenui
 \usepackage{hyperref}
 \usepackage{float} % For float Listings
 \usepackage[pdftex]{color}
 \usepackage[pdftex]{graphicx}
-%\graphicspath{{FIGURES/png/}} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{marron}       {rgb}{0.496, 0.203, 0.152}
 \definecolor{verde-claro}  {rgb}{0.625, 0.734, 0.199}
@@ -44,71 +41,6 @@
         stringstyle=\color{red}\ttfamily,
         morecomment=[l][\color{magenta}]{\#}
 }
-%\usepackage{listings} 
-%\lstloadlanguages{C++}
-%\lstset{
-%  language=C++,                        % C
-%  keywordstyle=\color{red},            % Palabras clave en rojo
-%  identifierstyle=\ttfamily,
-%  commentstyle=\color{blue},           % comentarios en azul
-%  stringstyle=\color{green},           % cadenas en verde
-%	%showstringspaces=false
-%  language=C,                          	% C
-%  %backgroundcolor=\color{bgd-listings},
-%	%backgroundcolor=\color{yellow},     	% Códigos sobre fondo amarillo
-%	%frame=lines,                        	% Línea arriba y abajo de cada listado de código
-%  %framerule=0pt,
-%  %basicstyle=\small\ttfamily,
-%	basicstyle=\scriptsize,                   	% Listados en tiny
-%	captionpos=b,													% Posición de los títulos abajo (bottom)
-%  keywordstyle=\bfseries,
-%	%keywordstyle=\color{black}\textbf,   	% BGD: Palabras clave en negro y negrita
-%	identifierstyle=\color{black}\ttfamily, % BGD: Identificadores en negro	
-%	commentstyle=\color{blue}\textit,  	 	% BGD: Comentarios en azul cursiva
-%  stringstyle=\ttfamily,
-%	%stringstyle=\color{red}\texttt,       % BGD: Cadenas en rojo
-%	directivestyle=\color{oscuro}\texttt,	
-%  emph={pragma,llc,omp},			% BGD: Resaltar las palabras pragma, llc y omp
-%	emphstyle=\textbf,
-%	showstringspaces=false,		% BGD: No mostar espacios
-%	columns=fixed,
-%	basewidth={0.6em, 0.45em},
-%	xleftmargin=5mm,
-%	keepspaces=true,			% BGD: Mantener espacios
-%	framexleftmargin=5mm,			% BGD: Margen izquierdo de los marcos (para que quepan num. de línea) 
-%	frame=trbl,				% BGD: Cuadro  (t/T: top, r/R: right, b/B: bottom, l/L: left): x->thin, X->thick
-%	framesep=4pt,
-%	%frameround=ftt,			% BGD: Cuadro con esquina curvadas
-%  %framextopmargin=3pt,
-%  %framexbottommargin=3pt,
-%  %framexleftmargin=0.4cm,
-%  %framesep=0pt,
-%	rulesepcolor=\color{black},		% BGD: Color de los cuadros azul
-%	numbers=left,				% BGD: Números de línea a la izquierda
-%	firstnumber=1,				% BGD: Número línea empieza en 0 (línea vacía, no se muestra)
-%	stepnumber=1,				% BGD: Números línea a línea
-%	numberstyle=\scriptsize,		% BGD: Números de línea pequeños
-%	numbersep=8pt,				% BGD: Números de línea separados 8 pts a la izquierda
-%	numberblanklines=false,			% BGD: No pone números de línea en líneas vacías
-%	extendedchars=true,			% BGD: Utiliza caracteres extendidos (tildes, etc.)
-%	inputencoding=latin1,							
-%  %inputencoding=utf8x,									
-%	tabsize=2,														% BGD: Tamaño de tabulador para indentaciones = 2
-%	breaklines=true,											% BGD: Cortar líneas si son muy grandes
-%	breakautoindent=true,									% BGD: Autoindentar líneas cortadas
-%	postbreak=\space											% BGD: Cortar líneas por espacios
-%}
-
-%% minimizar fragmentado de listados
-%\lstnewenvironment{listing}[1][]
-%   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
-%\lstdefinestyle{consola}
-%   {basicstyle=\scriptsize\bf\ttfamily,
-%    backgroundcolor=\color{gray75},
-%   }
-%\lstdefinestyle{C}
-%   {language=C,
-%   }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AtBeginDocument{
   %\renewcommand\thelstlisting{\arabic{chapter}.\arabic{section}}
@@ -153,7 +85,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \date{}
-
+%\hyphenpenalty 200
+%\tolerance 2000
+\hyphenation{Ministerio}
 \begin{document}
 \maketitle
 \thispagestyle{empty}
@@ -533,7 +467,7 @@ por lo tanto no la acepta.
 Se le vuelve a indicar el fallo a \ChatGPT{} y finalmente produce una solución que \jutge{} valida.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lstinputlisting[float=*h, caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
+\lstinputlisting[float=*t, caption={Contenido del fichero \texttt{box.cc} generado por \ChatGPT{}}, label=code:boxc]{box1.cc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Este modo de trabajo, interactuando con el bot para refinar la solución en sucesivas iteraciones fue el que se
 utilizó para el experimento que se realizó con un problema consistente en la implementación en C++ de una
@@ -569,12 +503,16 @@ Se exponen a continuación en español las sucesivas peticiones que se realizaro
     correctamente?.
   \item Al compilar obtengo el siguiente error:
 
+    \vspace{0.4cm}
         \texttt{
 In file included from main-box.cc:1:
 box.h:94:6: error: ‘ostream’ in namespace ‘std’ does not name a type
         }
-
+    \vspace{0.4cm}
+        
         \ChatGPT{} responde indicando:
+    
+    \vspace{0.4cm}
 
         \textit{
         The error message you provided indicates that the compiler is unable to find the definition of std::ostream. 
@@ -582,23 +520,12 @@ box.h:94:6: error: ‘ostream’ in namespace ‘std’ does not name a type
         To fix this error, you need to include the <iostream> header file at the beginning of box.h. 
         }
 \end{enumerate}
-%
-%     Para sobrecargar el operador de extracción ¿es perferible hacerlo como una función friend o usando una función ordinaria?
-%     To overload the extraction operator, is it preferable to do it as a friend function or using an ordinary function?
-%     Respuesta:
-%     It is generally considered best practice to overload the extraction operator (operator>>) as a non-member function, 
-%     rather than a friend function. 
-%     This is because the extraction operator is typically used to extract data from an input stream, and making it a friend 
-%     function of a class would allow it to access the class's private and protected data members, which could be a security risk. 
-%     Additionally, making it a non-member function allows for greater flexibility and encapsulation, as it can be used with any 
-%     object that can be passed to it as an input stream, rather than being limited to a specific class.
 A cada una de las peticiones anteriores el bot responde entregando sucesivos fragmentos de código con sus correspondientes 
 explicaciones.
 Una vez corregido el último error señalado, el programa completo con los tres ficheros puede compilarse con
 \texttt{make} obteniéndose un código ejecutable que funciona de acuerdo a la especificación.
 La Figura \ref{code:boxc} muestra el contenido del fichero \texttt{box.cc} en el que se han eliminado los comentarios
 en formato \textit{Doxygen} que el bot incluyó antes de cada una de las funciones.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Conclusiones}
 Como muestran los experimentos reflejados en la sección anterior, la capacidad de \ChatGPT{} para resolver problemas sencillos
@@ -672,12 +599,16 @@ metodologías para incorporar estos cambios.
 Integrar estos asistentes en las metodologías docentes e instruir a profesorado y alumnado acerca de su 
 funcionamiento y de sus posibles usos será clave para lograr una utilización correcta de estos sistemas.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section*{Agradecimientos}
-Este trabajo está financiado por el Ministerio de Ciencia e Innovacióna través de los proyectos 
+%\begin{flushleft}
+%\raggedright
+Este trabajo está financiado por el Ministerio de Ciencia e Innovacióna a través de los proyectos 
 PID2019-107228RBI00, AEI/10.13039/501100011033, PDC2022-134013I00 y TED2021-131019B-I00
 y también por la ACIISI del Gobierno de Canarias, proyecto ProID2021010012.
+%\end{flushleft}
 
-\balance{}
+%\balance{}
 \bibliographystyle{jenui}
 % Se elimina \nocite{*} para que NO incluya todas las referencias del fichero, sino solo las citadas
 %\nocite{*}
